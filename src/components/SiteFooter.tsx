@@ -3,6 +3,9 @@ export default function SiteFooter() {
     <footer className="site-footer">
       <ul className="socials">
         <li>
+          <a href="mailto:me@idhant.dev">Email</a>
+        </li>
+        <li>
           <a
             href="https://www.linkedin.com/in/idhant-ranjan-078104254"
             target="_blank"
@@ -12,7 +15,7 @@ export default function SiteFooter() {
           </a>
         </li>
         <li>
-          <a href="https://github.com/idhantranjan" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/IdhantRanjan" target="_blank" rel="noopener noreferrer">
             GitHub
           </a>
         </li>

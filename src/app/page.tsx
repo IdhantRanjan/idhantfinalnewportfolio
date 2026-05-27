@@ -60,6 +60,7 @@ export default function Home() {
             </a>{" "}
             biological intelligence infrastructure
           </li>
+          <li>incoming @ Northwestern Biomed, summer 2026</li>
           <li>
             <a
               href="https://www.linkedin.com/in/idhant-ranjan-078104254"
@@ -108,20 +109,20 @@ export default function Home() {
             </a>{" "}
             with 2k+ students, $20k+ raised, and 50+ camps
           </li>
+          <li>finalist @ Conrad Challenge, Blue Ocean Competition, ISEF, Diamond Challenge</li>
           <li>
-            finalist @ Conrad Challenge, Blue Ocean Competition, ISEF, Diamond Challenge
-          </li>
-          <li>
-            researched bayesian change-point detection for crypto prices @ Northwestern, 2x
-            accepted{" "}
-            <a
-              href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6375438"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-with-arrow"
-            >
-              IEEE
-            </a>
+            researched bayesian change-point detection for crypto prices @ Northwestern,{" "}
+            <span style={{ whiteSpace: "nowrap" }}>
+              2x accepted{" "}
+              <a
+                href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6375438"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-with-arrow"
+              >
+                IEEE
+              </a>
+            </span>
           </li>
           <li>
             independently researched deep learning applications in agent based modeling, accepted
@@ -163,9 +164,11 @@ export default function Home() {
 
         <hr />
 
-        <p>always adding more stuff.
-        <br />
-        reach me at <a href="mailto:me@idhantr.dev">me@idhantr.dev</a></p>
+        <p className="footer-blurb">
+          always adding more stuff.
+          <br />
+          reach me at <a href="mailto:me@idhant.dev">me@idhant.dev</a>
+        </p>
       </main>
 
       <SiteFooter />

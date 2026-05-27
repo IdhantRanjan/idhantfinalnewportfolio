@@ -184,14 +184,10 @@ main p {
   margin-bottom: 21.25px;
 }
 
-/* Tighter spacing for footer text section */
-main > hr + p {
+/* Footer blurb — tight, no gap before footer */
+.footer-blurb {
   margin-bottom: 0;
   margin-top: 8px;
-}
-
-main > p:last-of-type {
-  margin-bottom: 0;
 }
 
 main a {
@@ -228,7 +224,7 @@ main hr {
 .site-footer {
   border-top: 1px solid var(--border-footer);
   padding-top: 21.25px;
-  margin-top: 42.5px;
+  margin-top: 20px;
   font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 14.875px;
   color: var(--muted);
@@ -333,17 +329,213 @@ main a.link-with-arrow {
 /* Subpage title (used on /about, /projects, /thoughts, etc.) */
 .page-title {
   font-family: var(--font-instrument-serif), var(--font-newsreader), ui-serif, Georgia, serif;
-  font-size: 36px;
+  font-size: 48px;
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1.1;
   letter-spacing: -0.02em;
-  margin: 8.5px 0 21.25px;
+  margin: 8.5px 0 24px;
 }
 
 .page-subtitle {
   color: var(--muted);
   font-style: italic;
   margin-bottom: 34px;
+}
+
+/* Signature on about page */
+.signature-wrap {
+  margin-top: 42px;
+  margin-bottom: 0;
+}
+
+.signature-img {
+  width: 200px;
+  height: auto;
+  opacity: 0.85;
+}
+
+/* Two-column card grid (projects, research, work, recognition) */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--border-header);
+}
+
+.card-item {
+  padding: 20px 16px 20px 0;
+  border-bottom: 1px solid var(--border-header);
+  transition: opacity 0.2s ease;
+  cursor: default;
+}
+
+.card-item:nth-child(odd) {
+  padding-right: 24px;
+  border-right: 1px solid var(--border-header);
+}
+
+.card-item:nth-child(even) {
+  padding-left: 24px;
+  padding-right: 0;
+}
+
+.card-title {
+  font-family: var(--font-newsreader), ui-serif, Georgia, serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--fg);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.card-title a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--link-underline);
+  text-decoration-thickness: 1px;
+}
+
+.card-title a:hover {
+  opacity: 0.7;
+}
+
+.card-desc {
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.card-tag {
+  font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  color: var(--muted);
+  opacity: 0.7;
+  margin-top: 6px;
+}
+
+/* Spotlight: dim non-hovered cards */
+.card-grid.has-hover .card-item:not(.is-hovered) {
+  opacity: 0.3;
+}
+
+/* Footer tighter margin above footer line — overrides the original 42.5px */
+
+/* Scrolling listening tiles */
+.listen-scroll-section {
+  margin-top: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-left: -12.75px;
+  margin-right: -12.75px;
+}
+
+.scroll-row {
+  overflow: hidden;
+  width: 100%;
+}
+
+.scroll-track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  padding: 0 12.75px;
+}
+
+.scroll-row:nth-child(1) .scroll-track {
+  animation: scroll-left 35s linear infinite;
+}
+
+.scroll-row:nth-child(2) .scroll-track {
+  animation: scroll-right 28s linear infinite;
+}
+
+.scroll-row:nth-child(3) .scroll-track {
+  animation: scroll-left 40s linear infinite;
+}
+
+.scroll-row:has(.listen-tile:hover) .scroll-track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.listen-tile {
+  width: 110px;
+  height: 110px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.listen-tile:hover {
+  transform: translateY(-8px) scale(1.06);
+  z-index: 10;
+  box-shadow: 0 12px 28px rgba(26, 26, 26, 0.15);
+}
+
+.listen-tile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.listen-tile-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+}
+
+.listen-tile-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 8, 5, 0.78);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  border-radius: 10px;
+  padding: 10px 8px;
+  text-align: center;
+}
+
+.listen-tile:hover .listen-tile-overlay {
+  opacity: 1;
+}
+
+.listen-tile-track {
+  font-family: var(--font-newsreader), ui-serif, Georgia, serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 3px;
+}
+
+.listen-tile-artist {
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-size: 10px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.3;
 }
 
 /* Thoughts entries - flexbox layout like Adit's */

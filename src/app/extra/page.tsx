@@ -1,13 +1,17 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import ListeningScroll, { type Track } from "@/components/ListeningScroll";
 
 type Book = { title: string; author: string; note?: string };
-type Track = { title: string; artist: string };
 
-// Empty placeholders — fill these in over time.
+// ─── Fill these in ───────────────────────────────────────────────────────────
 const readingNow: Book[] = [];
+
 const readingDone: Book[] = [];
+
+// Add your tracks here: { title, artist, image (URL or null), color (optional hex fallback) }
 const listening: Track[] = [];
+// ─────────────────────────────────────────────────────────────────────────────
 
 export default function ExtraPage() {
   return (
@@ -36,7 +40,7 @@ export default function ExtraPage() {
             <p className="placeholder-note">nothing in the queue right now.</p>
           )}
 
-          <p className="reading-section-heading">already read</p>
+          <p className="reading-section-heading">recently finished</p>
           {readingDone.length > 0 ? (
             <ul className="book-list">
               {readingDone.map((b) => (
@@ -54,19 +58,7 @@ export default function ExtraPage() {
         {/* Listening */}
         <section>
           <h2 className="section-heading">Listening</h2>
-
-          {listening.length > 0 ? (
-            <ul className="listen-list">
-              {listening.map((t) => (
-                <li key={`${t.title}-${t.artist}`}>
-                  <span>{t.title}</span>
-                  <span className="listen-artist">— {t.artist}</span>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p className="placeholder-note">what&apos;s on repeat shows up here.</p>
-          )}
+          <ListeningScroll tracks={listening} />
         </section>
       </main>
 

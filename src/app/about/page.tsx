@@ -11,8 +11,7 @@ export default function AboutPage() {
 
         <p>
           I&apos;m a developer and researcher based in Chicago. Most of my work sits at the
-          intersection of biology, software, and the systems that decide which technologies
-          actually leave the lab.
+          intersection of deep learning, applied AI in spatial hardware, neural interfaces and economics. I am a firm believer of the principle thatechnology earns its shape from the people it's built for, not the other way around
         </p>
 
         <p>
@@ -35,15 +34,14 @@ export default function AboutPage() {
             neumeric
           </a>
           , infrastructure for biological intelligence. Before that I did change-point detection
-          research at Northwestern, market-structure work on the HFT paradox at Mizzou, and
+          research and disease modeling at Northwestern, market-structure work on the HFT paradox at Mizzou, and
           surface-modification studies on transistor behavior at NIU.
         </p>
 
         <p>
-          Outside of building, I sit on the Naperville Riverwalk Commission and was previously
+          Outside of development work/research, I sit on the Naperville Riverwalk Commission and also serve as the executive officer
           on the IPSD 204 student advisory board. I also helped run Build-a-Biz, a financial
-          literacy nonprofit that reached a few thousand students. I&apos;m mostly trying to
-          figure out which problems are worth a decade and which are worth a weekend.
+          literacy nonprofit that reached a few thousand students. I&apos;m always interested in trying new things and in my free time I like to read, run and play pickleball.
         </p>
 
         <ul>

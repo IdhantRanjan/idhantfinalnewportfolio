@@ -1,130 +1,466 @@
 @import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
-
-@custom-variant dark (&:is(.dark *));
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
-  --font-heading: var(--font-sans);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
-}
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --bg: #f4f0e8;
+  --fg: #1a1a1a;
+  --muted: #5a5a5a;
+  --border-header: rgba(26, 26, 26, 0.14);
+  --border-footer: rgba(26, 26, 26, 0.12);
+  --link-underline: rgba(26, 26, 26, 0.35);
 }
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
+html {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-newsreader), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Layout wrapper */
+.layout {
+  max-width: 748px;
+  margin: 0 auto;
+  padding: 21.25px 12.75px 42.5px;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 21.25px;
+  border-bottom: 1px solid var(--border-header);
+  margin-bottom: 0;
+  margin-left: -12px;
+  margin-right: -12px;
+  padding-left: 12.75px;
+  padding-right: 12.75px;
+}
+
+.site-title {
+  font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.site-title a {
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5.95px 21.25px;
+  align-items: baseline;
+  font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 15.9375px;
+}
+
+.nav a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--link-underline);
+  text-decoration-thickness: 1.275px;
+}
+
+.nav a:hover {
+  text-decoration-color: var(--fg);
+}
+
+.nav-sep {
+  color: var(--fg);
+  user-select: none;
+}
+
+/* Active page indicator ("> About" etc.) */
+.nav-active-indicator {
+  font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: var(--fg);
+  margin-right: 1px;
+}
+
+.nav a.nav-active {
+  text-decoration-color: var(--fg);
+}
+
+/* Main content */
+main {
+  padding-top: 21.25px;
+}
+
+/* Hero */
+.hero-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 0;
+}
+
+.hero {
+  font-family: var(--font-instrument-serif), var(--font-newsreader), ui-serif, Georgia, serif;
+  font-size: 44.2px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 28px 0;
+  flex: 1;
+  margin-top: -35px;  /* ← TWEAK THIS TO MOVE JUST "IDHANT" TITLE UP/DOWN */
+}
+
+/* Text wrapper to keep Idhant + intro stack together, separate from image */
+.hero-text {
+  flex: 1;
+  margin-top: 40px;  /* ← TWEAK THIS NUMBER TO MOVE "IDHANT" + INTRO TEXT DOWN */
+}
+
+/* Pixel image floating in the top-right corner of the main column */
+.hero-avatar-corner {
+  width: 180px;
+  height: 180px;
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  margin-top: 5px;  /* ← TWEAK THIS TO MOVE PIXEL IMAGE UP/DOWN */
+}
+
+@media (max-width: 480px) {
+  .hero-avatar-corner {
+    width: 120px;
+    height: 120px;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
-  html {
-    @apply font-sans;
-  }
+}
+
+.pin {
+  display: inline-block;
+  margin-right: -5px;  /* ← PULLS CHICAGO CLOSER TO PIN */
+  margin-left: -8px;  /* ← PULLS PIN LEFT TO ALIGN WITH OTHER TEXT */
+}
+
+/* Intro stack */
+.intro-stack {
+  font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 15.9375px;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+  margin: -8px 0 42.5px;
+}
+
+.intro-line {
+  color: var(--fg);
+  margin-bottom: 5.95px;
+}
+
+.intro-line:last-child {
+  margin-bottom: 0;
+}
+
+.intro-line--soft {
+  color: var(--muted);
+}
+
+/* Body text */
+main p {
+  margin-bottom: 21.25px;
+}
+
+/* Tighter spacing for footer text section */
+main > hr + p {
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+main > p:last-of-type {
+  margin-bottom: 0;
+}
+
+main a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-thickness: 1.36px;
+}
+
+main a:hover {
+  opacity: 0.7;
+}
+
+main ul {
+  padding-left: 21.25px;
+  margin-bottom: 21.25px;
+  list-style: disc;
+}
+
+main li {
+  margin-bottom: 5.95px;
+}
+
+main li:last-child {
+  margin-bottom: 0;
+}
+
+main hr {
+  margin: 8.5px 0;
+  border: none;
+  border-top: 1px solid var(--border-header);
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--border-footer);
+  padding-top: 21.25px;
+  margin-top: 42.5px;
+  font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 14.875px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  gap: 21.25px;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 12.75px;
+}
+
+/* Socials keep the dark text color */
+.socials a {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--link-underline);
+  text-decoration-thickness: 1px;
+}
+
+.socials a:hover {
+  text-decoration-color: var(--fg);
+  opacity: 0.7;
+}
+
+.year {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+/* Section headings */
+.section-heading {
+  font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 42.5px 0 14px;
+}
+
+/* Muted description line inside list items */
+.item-desc {
+  color: var(--muted);
+  font-size: 15.3px;
+}
+
+/* Role tag next to titles */
+.role-tag {
+  font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  color: var(--muted);
+  margin-left: 8px;
+  opacity: 0.75;
+}
+
+/* Extra spacing between list items in section lists */
+main section li {
+  margin-bottom: 14px;
+}
+
+main section li:last-child {
+  margin-bottom: 0;
+}
+
+/* Link with thin underline + sliding arrow (ported from old site) */
+.link-with-arrow {
+  position: relative;
+  color: var(--fg);
+  border-bottom: 0.5px solid currentColor;
+  text-decoration: none;
+  padding-bottom: 1px;
+  transition: opacity 0.2s ease;
+  display: inline;
+  width: fit-content;
+}
+
+.link-with-arrow:hover {
+  opacity: 0.7;
+}
+
+.link-with-arrow::after {
+  content: "→";
+  margin-left: 4px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+  font-size: 0.9em;
+}
+
+.link-with-arrow:hover::after {
+  transform: translateX(2px);
+}
+
+/* Override main a underline when link-with-arrow is used (avoid double underline) */
+main a.link-with-arrow {
+  text-decoration: none;
+}
+
+/* Subpage title (used on /about, /projects, /thoughts, etc.) */
+.page-title {
+  font-family: var(--font-instrument-serif), var(--font-newsreader), ui-serif, Georgia, serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 8.5px 0 21.25px;
+}
+
+.page-subtitle {
+  color: var(--muted);
+  font-style: italic;
+  margin-bottom: 34px;
+}
+
+/* Thoughts entries - flexbox layout like Adit's */
+.thought-entry {
+  margin-bottom: 32px;
+  display: flex;
+  gap: 16px;
+}
+
+.thought-date {
+  font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 13px;
+  color: var(--muted);
+  flex-shrink: 0;
+  width: 90px;
+  text-align: left;
+}
+
+.thought-content {
+  flex: 1;
+}
+
+.thought-title {
+  font-family: var(--font-instrument-serif), var(--font-newsreader), ui-serif, Georgia, serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 0 0 6px 0;
+}
+
+.thought-title a {
+  color: var(--fg);
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.thought-title a:hover {
+  opacity: 0.7;
+}
+
+.thought-summary {
+  color: var(--muted);
+  margin-bottom: 8px;
+  font-style: italic;
+  font-size: 15px;
+}
+
+.thought-read {
+  font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 13.5px;
+  margin: 0;
+}
+
+/* Research page styling */
+.research-title {
+  font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 15.9375px;
+  font-weight: 500;
+  color: var(--fg);
+}
+
+.research-description {
+  color: var(--muted);
+  font-size: 15.3px;
+}
+
+.year-divider {
+  font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--fg);
+  letter-spacing: 0.05em;
+  margin: 8px 0 22px;
+}
+
+/* Reading list */
+.reading-section-heading {
+  font-family: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  margin: 30px 0 12px;
+}
+
+.book-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.book-list li {
+  margin-bottom: 8px;
+}
+
+.book-title {
+  font-style: italic;
+}
+
+/* Listening list */
+.listen-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.listen-list li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.listen-artist {
+  color: var(--muted);
+}
+
+/* Empty-state placeholder text */
+.placeholder-note {
+  color: var(--muted);
+  font-style: italic;
 }

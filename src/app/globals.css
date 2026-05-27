@@ -538,6 +538,73 @@ main a.link-with-arrow {
   line-height: 1.3;
 }
 
+/* Reading section headers — same font as page titles */
+.reading-subheader {
+  font-family: var(--font-instrument-serif), var(--font-newsreader), ui-serif, Georgia, serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--fg);
+  margin: 28px 0 14px;
+  line-height: 1.3;
+}
+
+/* Book list */
+.book-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.book-list li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.book-title {
+  font-style: italic;
+  color: var(--muted);
+}
+
+.book-note {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 2px;
+  margin-left: 0;
+}
+
+/* Spotify stats */
+.spotify-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 34px;
+}
+
+.stat-card {
+  border: 1px solid var(--border-header);
+  padding: 16px;
+  border-radius: 4px;
+}
+
+.stat-number {
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--fg);
+  margin: 0 0 4px 0;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.stats-placeholder {
+  padding: 12px 0;
+}
+
 /* Thoughts entries - flexbox layout like Adit's */
 .thought-entry {
   margin-bottom: 32px;

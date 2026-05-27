@@ -60,9 +60,18 @@ export default function AboutPage() {
           >
             student advisory board
           </a>
-          . I also helped run Build-a-Biz, a financial literacy nonprofit that reached a few
-          thousand students. I&apos;m always interested in trying new things and in my free time
-          I like to read, run and play pickleball.
+          . I also help run{" "}
+          <a
+            href="https://buildabiz.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-with-arrow"
+          >
+            Build-a-Biz
+          </a>
+          , a financial literacy nonprofit that has reached a few thousand students. I&apos;m
+          always interested in trying new things and in my free time I like to read, run and play
+          pickleball.
         </p>
 
         <div className="signature-wrap">

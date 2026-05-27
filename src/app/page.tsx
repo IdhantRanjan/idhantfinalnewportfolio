@@ -60,16 +60,17 @@ export default function Home() {
             </a>{" "}
             biological intelligence infrastructure
           </li>
-          <li>incoming @ Northwestern Biomed, summer 2026</li>
           <li>
+            incoming @{" "}
             <a
-              href="https://www.linkedin.com/in/idhant-ranjan-078104254"
+              href="https://labs.feinberg.northwestern.edu/parvez/index.html"
               target="_blank"
               rel="noopener noreferrer"
               className="link-with-arrow"
             >
-              linkedin.com/in/idhant-ranjan
+              Northwestern Biomed
             </a>
+            , summer 2026
           </li>
         </ul>
 
@@ -109,11 +110,31 @@ export default function Home() {
             </a>{" "}
             with 2k+ students, $20k+ raised, and 50+ camps
           </li>
-          <li>finalist @ Conrad Challenge, Blue Ocean Competition, ISEF, Diamond Challenge</li>
           <li>
-            researched bayesian change-point detection for crypto prices @ Northwestern,{" "}
+            finalist @{" "}
+            <a
+              href="https://conrad.spacecenter.org/2026-awards/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-with-arrow"
+            >
+              Conrad Challenge
+            </a>
+            ,{" "}
+            <a
+              href="https://blueoceancompetition.org/2025-2026-winners/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-with-arrow"
+            >
+              Blue Ocean Competition
+            </a>
+            , ISEF, Diamond Challenge
+          </li>
+          <li>
             <span style={{ whiteSpace: "nowrap" }}>
-              2x accepted{" "}
+              researched bayesian change-point detection for crypto prices @ Northwestern, 2x
+              accepted{" "}
               <a
                 href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6375438"
                 target="_blank"

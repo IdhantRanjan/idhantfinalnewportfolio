@@ -99,7 +99,7 @@ export default function ExtraPage() {
         </section>
 
         {/* Reading */}
-        <section>
+        <section className="extra-section">
           <h2 className="section-heading">Reading</h2>
 
           <h3 className="reading-subheader">now</h3>
@@ -107,8 +107,8 @@ export default function ExtraPage() {
             <ul className="book-list">
               {readingNow.map((b) => (
                 <li key={b.title}>
-                  <span className="book-title">{b.title}</span> — {b.author}
-                  {b.note ? <span className="book-note">{b.note}</span> : ""}
+                  <span className="book-title">{b.title}</span>
+                  <span className="book-author">{b.author}</span>
                 </li>
               ))}
             </ul>
@@ -121,8 +121,8 @@ export default function ExtraPage() {
             <ul className="book-list">
               {readingFinished.map((b) => (
                 <li key={b.title}>
-                  <span className="book-title">{b.title}</span> — {b.author}
-                  {b.note ? <span className="book-note">{b.note}</span> : ""}
+                  <span className="book-title">{b.title}</span>
+                  <span className="book-author">{b.author}</span>
                 </li>
               ))}
             </ul>
@@ -132,7 +132,7 @@ export default function ExtraPage() {
         </section>
 
         {/* Spotify */}
-        <section>
+        <section className="extra-section">
           <h2 className="section-heading">Spotify</h2>
           <div className="spotify-stats">
             <div className="stat-card">
@@ -147,11 +147,8 @@ export default function ExtraPage() {
         </section>
 
         {/* Listening */}
-        <section>
+        <section className="extra-section">
           <h2 className="section-heading">Listening</h2>
-          <p style={{ color: "var(--muted)", fontSize: "13px", marginBottom: "16px" }}>
-            (sample tiles — add your real top tracks from Spotify)
-          </p>
           <ListeningScroll tracks={sampleListening} />
         </section>
       </main>

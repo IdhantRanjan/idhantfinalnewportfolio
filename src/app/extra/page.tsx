@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ListeningScroll, { type Track } from "@/components/ListeningScroll";
+import GitHubHeatmap from "@/components/GitHubHeatmap";
 
 type Book = {
   title: string;
@@ -70,6 +71,7 @@ export default function ExtraPage() {
     totalContributions: number;
     activeDays: number;
     streak: number;
+    weeks: { contributionDays: { date: string; contributionCount: number }[] }[];
   } | null>(null);
 
   const [spotify, setSpotify] = useState<{
@@ -105,31 +107,25 @@ export default function ExtraPage() {
         {/* GitHub Contributions */}
         <section>
           <h2 className="section-heading">GitHub</h2>
-          {github ? (
-            <div className="spotify-stats">
-              <div className="stat-card">
-                <p className="stat-number">{github.totalContributions}</p>
-                <p className="stat-label">contributions in {new Date().getFullYear()}</p>
-              </div>
-              <div className="stat-card">
-                <p className="stat-number">{github.activeDays}</p>
-                <p className="stat-label">active days</p>
-              </div>
-              <div className="stat-card">
-                <p className="stat-number">{github.streak}</p>
-                <p className="stat-label">day streak</p>
-              </div>
-            </div>
-          ) : (
-            <div className="spotify-stats">
-              {["contributions in 2026", "active days", "day streak"].map((label) => (
-                <div className="stat-card" key={label}>
-                  <p className="stat-number">—</p>
-                  <p className="stat-label">{label}</p>
-                </div>
-              ))}
+          {github?.weeks && (
+            <div style={{ marginBottom: "20px" }}>
+              <GitHubHeatmap weeks={github.weeks} />
             </div>
           )}
+          <div className="spotify-stats">
+            <div className="stat-card">
+              <p className="stat-number">{github?.totalContributions ?? "—"}</p>
+              <p className="stat-label">contributions in {new Date().getFullYear()}</p>
+            </div>
+            <div className="stat-card">
+              <p className="stat-number">{github?.activeDays ?? "—"}</p>
+              <p className="stat-label">active days</p>
+            </div>
+            <div className="stat-card">
+              <p className="stat-number">{github?.streak ?? "—"}</p>
+              <p className="stat-label">day streak</p>
+            </div>
+          </div>
           <p style={{ color: "var(--muted)", fontSize: "13px", marginTop: "8px" }}>
             <a href="https://github.com/IdhantRanjan" target="_blank" rel="noopener noreferrer" className="link-with-arrow">
               github.com/IdhantRanjan

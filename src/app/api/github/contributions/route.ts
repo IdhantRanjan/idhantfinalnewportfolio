@@ -58,5 +58,6 @@ export async function GET() {
     totalContributions: calendar.totalContributions,
     activeDays,
     streak,
+    weeks: calendar.weeks,
   });
 }

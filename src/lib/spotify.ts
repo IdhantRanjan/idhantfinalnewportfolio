@@ -1,7 +1,7 @@
 export function getSpotifyAuthUrl() {
   const clientId = process.env.SPOTIFY_CLIENT_ID;
   const redirectUri = process.env.SPOTIFY_REDIRECT_URI;
-  const scope = "user-read-recently-played user-read-private user-read-email";
+  const scope = "user-read-recently-played user-top-read user-read-private";
 
   const params = new URLSearchParams({
     client_id: clientId || "",

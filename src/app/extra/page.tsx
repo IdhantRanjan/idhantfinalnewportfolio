@@ -66,16 +66,33 @@ const sampleListening: Track[] = [
 ];
 
 export default function ExtraPage() {
-  const [stats, setStats] = useState<{
-    booksRead: number;
-    currentlyReading: number;
-    spotifyMinutes?: number;
-    spotifyPlaycount?: number;
-  }>({ booksRead: 42, currentlyReading: 4 });
+  const [github, setGithub] = useState<{
+    totalContributions: number;
+    activeDays: number;
+    streak: number;
+  } | null>(null);
+
+  const [spotify, setSpotify] = useState<{
+    minutesListened: number;
+    playcount: number;
+    topTracks: { title: string; artist: string; image: string | null; color: string }[];
+  } | null>(null);
+
+  const [spotifyConnected, setSpotifyConnected] = useState(true);
 
   useEffect(() => {
-    // TODO: Fetch real Spotify stats once credentials are in env vars
-    // For now, using placeholder values
+    fetch("/api/github/contributions")
+      .then((r) => r.ok ? r.json() : null)
+      .then((d) => d && setGithub(d))
+      .catch(() => null);
+
+    fetch("/api/spotify/stats")
+      .then((r) => {
+        if (r.status === 401) { setSpotifyConnected(false); return null; }
+        return r.ok ? r.json() : null;
+      })
+      .then((d) => d && setSpotify(d))
+      .catch(() => null);
   }, []);
 
   return (
@@ -88,14 +105,36 @@ export default function ExtraPage() {
         {/* GitHub Contributions */}
         <section>
           <h2 className="section-heading">GitHub</h2>
-          <div className="stats-placeholder">
-            <p style={{ color: "var(--muted)", fontSize: "14px" }}>
-              GitHub contributions tracker — coming soon. follow my work on{" "}
-              <a href="https://github.com/IdhantRanjan" target="_blank" rel="noopener noreferrer" className="link-with-arrow">
-                github.com/IdhantRanjan
-              </a>
-            </p>
-          </div>
+          {github ? (
+            <div className="spotify-stats">
+              <div className="stat-card">
+                <p className="stat-number">{github.totalContributions}</p>
+                <p className="stat-label">contributions in {new Date().getFullYear()}</p>
+              </div>
+              <div className="stat-card">
+                <p className="stat-number">{github.activeDays}</p>
+                <p className="stat-label">active days</p>
+              </div>
+              <div className="stat-card">
+                <p className="stat-number">{github.streak}</p>
+                <p className="stat-label">day streak</p>
+              </div>
+            </div>
+          ) : (
+            <div className="spotify-stats">
+              {["contributions in 2026", "active days", "day streak"].map((label) => (
+                <div className="stat-card" key={label}>
+                  <p className="stat-number">—</p>
+                  <p className="stat-label">{label}</p>
+                </div>
+              ))}
+            </div>
+          )}
+          <p style={{ color: "var(--muted)", fontSize: "13px", marginTop: "8px" }}>
+            <a href="https://github.com/IdhantRanjan" target="_blank" rel="noopener noreferrer" className="link-with-arrow">
+              github.com/IdhantRanjan
+            </a>
+          </p>
         </section>
 
         {/* Reading */}
@@ -134,22 +173,30 @@ export default function ExtraPage() {
         {/* Spotify */}
         <section className="extra-section">
           <h2 className="section-heading">Spotify</h2>
-          <div className="spotify-stats">
-            <div className="stat-card">
-              <p className="stat-number">{stats.spotifyMinutes || "—"}</p>
-              <p className="stat-label">minutes listened this year</p>
+          {!spotifyConnected ? (
+            <p style={{ color: "var(--muted)", fontSize: "14px" }}>
+              <a href="https://accounts.spotify.com/authorize?client_id=06e6f78893e54e55997668f6f87467ac&response_type=code&redirect_uri=https%3A%2F%2Fidhant.dev%2Fapi%2Fspotify%2Fcallback&scope=user-read-recently-played+user-top-read+user-read-private" className="link-with-arrow">
+                connect Spotify to see stats
+              </a>
+            </p>
+          ) : (
+            <div className="spotify-stats">
+              <div className="stat-card">
+                <p className="stat-number">{spotify?.playcount ?? "—"}</p>
+                <p className="stat-label">recent plays tracked</p>
+              </div>
+              <div className="stat-card">
+                <p className="stat-number">{spotify?.minutesListened ?? "—"}</p>
+                <p className="stat-label">est. minutes listened</p>
+              </div>
             </div>
-            <div className="stat-card">
-              <p className="stat-number">{stats.spotifyPlaycount || "—"}</p>
-              <p className="stat-label">plays in 2026</p>
-            </div>
-          </div>
+          )}
         </section>
 
         {/* Listening */}
         <section className="extra-section">
           <h2 className="section-heading">Listening</h2>
-          <ListeningScroll tracks={sampleListening} />
+          <ListeningScroll tracks={spotify?.topTracks?.length ? spotify.topTracks : sampleListening} />
         </section>
       </main>
 

@@ -5,25 +5,54 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 
 const awards = [
-  { title: "ijas state competition – gold", description: "neurovox: ai based voice detection for parkinsons" },
-  { title: "presidential volunteer service award – gold", description: "president of the united states" },
-  { title: "executive data science capstone", description: "johns hopkins university" },
-  { title: "national finalist, pta reflections", description: "national pta" },
-  { title: "national rank: 18th, national french competition", description: "american association of teachers of french" },
-  { title: "ijas district 9 poster session gold", description: "regional ijas" },
-  { title: "ijas state poster session gold", description: "ijas" },
-  { title: "ijas state paper session gold", description: "ijas" },
-];
-
-const volunteering = [
-  { title: "build-a-biz", description: "financial literacy non-profit. ~$5k in funding. 3k+ students impacted.", tag: "president" },
-  { title: "surgical volunteer @ edward-elmhurst", description: "assist surgeons and hospital staff. 150+ hours.", tag: "volunteer" },
-  { title: "alzheimer's foundation of america", description: "lead membership growth and engagement, promote awareness.", tag: "vice president" },
+  {
+    title: "Pete Conrad Scholar — 1st Place Global",
+    description: "Conrad Challenge (VOCL) · 1 of 5,000 teams · 2026",
+  },
+  {
+    title: "Blue Ocean Entrepreneurship Competition",
+    description: "Top 10 of 23,300 global / 2nd in North America (VOCL) · 2026",
+  },
+  {
+    title: "Accepted Paper — IIAI CDEF 2026",
+    description: "top 2.5%, IEEE publication · presenting in Japan · 2026",
+  },
+  {
+    title: "Accepted Paper — IEEE ICCSIC 2026",
+    description: "Adaptive Feature Importance Scoring for Heterogeneous Graphs",
+  },
+  {
+    title: "Accepted Paper — European Society for Ecological Economics 2026",
+    description: "ML + ABM for Degrowth Policy",
+  },
+  {
+    title: "ISEF Semi-Finalist",
+    description: "Top 10 in Illinois (VOCL) · 2026",
+  },
+  {
+    title: "Illinois Junior Academy of Science",
+    description: "2× Gold Award",
+  },
+  {
+    title: "2nd Place — Illinois Personal Finance Challenge State Finals",
+    description: "Illinois State Treasurer · 2026",
+  },
+  {
+    title: "4th Place — ARISE National Aerial Robotics Championship",
+    description: "2025",
+  },
+  {
+    title: "National Merit Semifinalist",
+    description: "2026 (pending)",
+  },
+  {
+    title: "Presidential Volunteer Service Award — Gold",
+    description: "USK4W · 2024",
+  },
 ];
 
 export default function RecognitionPage() {
   const [hoveredAward, setHoveredAward] = useState<number | null>(null);
-  const [hoveredVol, setHoveredVol] = useState<number | null>(null);
 
   return (
     <div className="layout">
@@ -32,7 +61,6 @@ export default function RecognitionPage() {
       <main>
         <h1 className="page-title">Recognition</h1>
 
-        <h2 className="section-heading">Awards</h2>
         <div className={`card-grid${hoveredAward !== null ? " has-hover" : ""}`}>
           {awards.map((a, i) => (
             <div
@@ -43,22 +71,6 @@ export default function RecognitionPage() {
             >
               <p className="card-title">{a.title}</p>
               <p className="card-desc">{a.description}</p>
-            </div>
-          ))}
-        </div>
-
-        <h2 className="section-heading" style={{ marginTop: 42 }}>Volunteering</h2>
-        <div className={`card-grid${hoveredVol !== null ? " has-hover" : ""}`}>
-          {volunteering.map((v, i) => (
-            <div
-              key={v.title}
-              className={`card-item${hoveredVol === i ? " is-hovered" : ""}`}
-              onMouseEnter={() => setHoveredVol(i)}
-              onMouseLeave={() => setHoveredVol(null)}
-            >
-              <p className="card-title">{v.title}</p>
-              <p className="card-desc">{v.description}</p>
-              <p className="card-tag">{v.tag}</p>
             </div>
           ))}
         </div>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Fragment } from "react";
+import { useEffect, useState } from "react";
 
 const navItems = [
   { href: "/about", label: "About" },
@@ -16,38 +16,38 @@ const navItems = [
 
 export default function SiteHeader() {
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const isActive = (href: string) =>
     pathname === href || pathname.startsWith(href + "/");
 
   return (
-    <header className="site-header">
-      <p className="site-title">
-        <Link href="/">/i</Link>
-      </p>
-      <nav className="nav" aria-label="Primary">
-        {navItems.map((item, i) => (
-          <Fragment key={item.href}>
-            {i === 3 && (
-              <span className="nav-sep" aria-hidden="true">
-                |
-              </span>
-            )}
+    <>
+      <div className="glass-nav-spacer" aria-hidden="true" />
+      <header className={`glass-nav${scrolled ? " glass-nav--scrolled" : ""}`}>
+        <Link href="/" className="glass-nav-logo">
+          /i
+        </Link>
+        <nav className="glass-nav-links" aria-label="Primary">
+          {navItems.map((item) => (
             <Link
+              key={item.href}
               href={item.href}
-              className={isActive(item.href) ? "nav-active" : undefined}
+              className={`glass-nav-link${isActive(item.href) ? " is-active" : ""}`}
               aria-current={isActive(item.href) ? "page" : undefined}
             >
-              {isActive(item.href) && (
-                <span className="nav-active-indicator" aria-hidden="true">
-                  &gt;{" "}
-                </span>
-              )}
               {item.label}
             </Link>
-          </Fragment>
-        ))}
-      </nav>
-    </header>
+          ))}
+        </nav>
+      </header>
+    </>
   );
 }

@@ -119,6 +119,8 @@ export const projects: DetailItem[] = [
     title: "ar-x-finlit",
     description: "gen-Z retention for CIBC",
     tag: "creator",
+    externalLink: "https://drive.google.com/file/d/1Zh3x6gSZz0Dn0G-OtaRvLblOtl6HNMWd/view",
+    externalLinkLabel: "pitch deck",
     overview:
       "a financial literacy platform built for CIBC (Canadian Imperial Bank of Commerce) to increase product engagement and retention among Gen-Z customers. the core insight: gen-Z doesn't distrust banks — they distrust boring. ar-x-finlit meets them where they are, using augmented reality and interactive education to make financial products feel relevant.",
     sections: [
@@ -196,7 +198,7 @@ export const projects: DetailItem[] = [
     tag: "creator",
     externalLink:
       "https://drive.google.com/file/d/1g2eW1XNRznrjjqpszB04eZIS9xap9sWW/view",
-    externalLinkLabel: "research paper",
+    externalLinkLabel: "pitch deck",
     overview:
       "AllergX is an RNA-based therapeutic framework that targets the root cause of allergic responses through programmable aptaswitches. rather than suppressing symptoms with antihistamines or relying on long-term immunotherapy, it directly regulates Immunoglobulin E (IgE) via precision molecular logic — treating the mechanism, not the outcome.",
     sections: [
@@ -223,6 +225,9 @@ export const projects: DetailItem[] = [
     title: "cropsia",
     description: "drone imagery + CV to detect crop disease",
     tag: "creator",
+    externalLink:
+      "https://firebasestorage.googleapis.com/v0/b/tks-life-prod.appspot.com/o/items%2FVqm9pgkMpcfluxghQzFTQrBa7eL2%2FCropsia.pdf?alt=media&token=138db241-2802-4778-a54e-d957c13fa387",
+    externalLinkLabel: "pitch deck",
     overview:
       "Cropsia leverages drone-collected aerial imagery and computer vision to identify crop diseases early, helping farmers prevent significant production losses. the system classifies 38 distinct plant diseases from a dataset of 87,000+ images and delivers actionable recommendations through a farm management app.",
     sections: [
@@ -355,7 +360,7 @@ export const research: DetailItem[] = [
     tag: "researcher",
     externalLink:
       "https://drive.google.com/file/d/1CFp8l556pllMaE0TpKhbYdBqIqSiA8JD/view?usp=sharing",
-    externalLinkLabel: "IJAS poster paper",
+    externalLinkLabel: "EGFET Research Report",
     overview:
       "at Northern Illinois University, I'm developing and testing advanced electronic biosensors, focusing on how surface modifications to electrolyte-gated field-effect transistors (EGFETs) alter their transconductance and gate voltage characteristics.",
     sections: [

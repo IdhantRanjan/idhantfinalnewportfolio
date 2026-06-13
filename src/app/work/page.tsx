@@ -1,53 +1,60 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import { work } from "@/data/items";
 
-const work = [
-  {
-    title: "swe @ plasnomic",
-    description: "nda. building prism.",
-    tag: "software engineer",
-  },
-  {
-    title: "commissioner @ city of naperville",
-    description: "serve on the riverwalk commission. manage $3m/year in spending.",
-    tag: "commissioner",
-  },
-  {
-    title: "student advisory board @ ipsd 204",
-    description: "executive officer. advise board of education. 26,000 students.",
-    tag: "executive officer",
-  },
-];
+const workItems = work.filter((w) => w.type === "work");
+const volunteerItems = work.filter((w) => w.type === "volunteer");
 
 export default function WorkPage() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredWork, setHoveredWork] = useState<number | null>(null);
+  const [hoveredVol, setHoveredVol] = useState<number | null>(null);
 
   return (
     <div className="layout">
       <SiteHeader />
-
       <main>
         <h1 className="page-title">Work</h1>
 
-        <div className={`card-grid${hoveredIndex !== null ? " has-hover" : ""}`}>
-          {work.map((w, i) => (
+        <div className={`card-grid${hoveredWork !== null ? " has-hover" : ""}`}>
+          {workItems.map((w, i) => (
             <div
-              key={w.title}
-              className={`card-item${hoveredIndex === i ? " is-hovered" : ""}`}
-              onMouseEnter={() => setHoveredIndex(i)}
-              onMouseLeave={() => setHoveredIndex(null)}
+              key={w.slug}
+              className={`card-item${hoveredWork === i ? " is-hovered" : ""}`}
+              onMouseEnter={() => setHoveredWork(i)}
+              onMouseLeave={() => setHoveredWork(null)}
             >
-              <p className="card-title">{w.title}</p>
-              <p className="card-desc">{w.description}</p>
-              <p className="card-tag">{w.tag}</p>
+              <Link href={`/work/${w.slug}`} className="card-link">
+                <p className="card-title">{w.title}</p>
+                <p className="card-desc">{w.description}</p>
+                <p className="card-tag">{w.tag}</p>
+              </Link>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="section-heading" style={{ marginTop: "48px" }}>Volunteering</h2>
+
+        <div className={`card-grid${hoveredVol !== null ? " has-hover" : ""}`}>
+          {volunteerItems.map((w, i) => (
+            <div
+              key={w.slug}
+              className={`card-item${hoveredVol === i ? " is-hovered" : ""}`}
+              onMouseEnter={() => setHoveredVol(i)}
+              onMouseLeave={() => setHoveredVol(null)}
+            >
+              <Link href={`/work/${w.slug}`} className="card-link">
+                <p className="card-title">{w.title}</p>
+                <p className="card-desc">{w.description}</p>
+                <p className="card-tag">{w.tag}</p>
+              </Link>
             </div>
           ))}
         </div>
       </main>
-
       <SiteFooter />
     </div>
   );

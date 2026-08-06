@@ -1,18 +1,18 @@
 import { notFound } from "next/navigation";
 import { work } from "@/data/items";
-import DetailPage from "@/components/DetailPage";
+import PlainDetail from "@/components/PlainDetail";
 
 export function generateStaticParams() {
-  return work.map((w) => ({ slug: w.slug }));
+  return work.map((i) => ({ slug: i.slug }));
 }
 
-export default async function WorkDetail({
+export default async function Page({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const item = work.find((w) => w.slug === slug);
+  const item = work.find((i) => i.slug === slug);
   if (!item) notFound();
-  return <DetailPage item={item} backHref="/work" backLabel="work" />;
+  return <PlainDetail item={item} />;
 }

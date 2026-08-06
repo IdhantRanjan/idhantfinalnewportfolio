@@ -1,198 +1,171 @@
-import Image from "next/image";
-import SiteHeader from "@/components/SiteHeader";
-import SiteFooter from "@/components/SiteFooter";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="layout">
-      <SiteHeader />
+    <main className="home">
+      <p>
+        hi, i&apos;m <strong>idhant ranjan</strong>. i work on physical ai,
+        bio-intelligence infrastructure, neural interfaces, and the ml layer
+        underneath.
+      </p>
 
-      <main>
-        <div className="hero-row">
-          <div className="hero-text">
-            <h1 className="hero">Idhant</h1>
-            <div className="intro-stack">
-              <p className="intro-line">17</p>
-              <p className="intro-line">
-                <span className="pin">📍</span> Chicago
-              </p>
-              <p className="intro-line">developer &amp; researcher</p>
-              <p className="intro-line intro-line--soft">Sapere Aude.</p>
-            </div>
-          </div>
-          <Image
-            src="/images/idhant-pixel.png"
-            alt="Pixel avatar of Idhant"
-            width={240}
-            height={240}
-            className="hero-avatar-corner"
-            priority
-          />
-        </div>
+      <p>right now i&apos;m:</p>
 
-        <p>
-          Hi, I&apos;m Idhant. I&apos;m currently interested in bio-intelligence infrastructure,
-          deep learning, neural interfaces, and economic systems.
-        </p>
+      <ul>
+        <li>
+          building <Link href="/projects/vocl">vocl</Link>. surface emg to speech,
+          real-time.
+        </li>
+        <li>
+          for it:{" "}
+          <a href="https://conrad.spacecenter.org/2026-awards/">
+            <strong>pete conrad scholar</strong>
+          </a>{" "}
+          (1st globally, $1.16m),{" "}
+          <a href="https://blueoceancompetition.org/2025-2026-winners/">
+            <strong>blue ocean</strong>
+          </a>{" "}
+          (2nd in n. america), isef semi-finalist.
+        </li>
+        <li>
+          <a href="https://scholar.google.com/citations?user=Hh1nMCkAAAAJ&hl=en">
+            <strong>northwestern</strong>
+          </a>
+          , cell + dev bio. crispr screen across 600+ e3 ligases in zebrafish,
+          hierarchical clustering of developmental expression.
+        </li>
+        <li>
+          <Link href="/research/hft-mizzou">
+            <strong>mizzou</strong>
+          </Link>
+          , quant finance. multimodal ipo prediction from s-1 filings.
+        </li>
+        <li>
+          co-president, <Link href="/work/build-a-biz">build-a-biz</Link>. 1,300+
+          kids, two wgn segments (
+          <a href="https://wgnradio.com/your-money-matters/learning-financial-literacy-through-build-a-biz/">
+            1
+          </a>
+          ,{" "}
+          <a href="https://wgnradio.com/your-money-matters/build-a-biz-financial-literacy-from-illinois-to-zambia/">
+            2
+          </a>
+          ), illinois to zambia.
+        </li>
+      </ul>
 
-        <p>currently:</p>
+      <p>previously i:</p>
 
-        <ul>
-          <li>
-            <a
-              href="https://www.vocl.dev/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-with-arrow"
-            >
-              vocl.dev
-            </a>{" "}
-            emg based thought to speech
-          </li>
-          <li>
-            <a
-              href="https://neumeric.xyz/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-with-arrow"
-            >
-              neumeric.xyz
-            </a>{" "}
-            biological intelligence infrastructure
-          </li>
-          <li>
-            incoming @{" "}
-            <a
-              href="https://labs.feinberg.northwestern.edu/parvez/index.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-with-arrow"
-            >
-              Northwestern Biomed
-            </a>
-            , summer 2026
-          </li>
-        </ul>
+      <ul>
+        <li>
+          built <Link href="/research/bopcd-northwestern">dlsci</Link> over 1.5 yrs at{" "}
+          <strong>northwestern</strong>. bayesian changepoint early-warning for defi
+          liquidity stress. recall 1.000, 129h lead time.{" "}
+          <strong>iiai cdef 2026</strong>, ieee publication.
+        </li>
+        <li>
+          presented{" "}
+          <Link href="/research/deep-learning-abm">
+            ml + agent-based modeling for degrowth policy
+          </Link>{" "}
+          at <strong>esee 2026</strong>, ghent.{" "}
+          <a href="/esee-2026-certificate.pdf">certificate</a>.
+        </li>
+        <li>
+          adaptive feature importance for heterogeneous graphs.{" "}
+          <strong>ieee iccsic 2026</strong>,{" "}
+          <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6375438">ssrn</a>
+          .
+        </li>
+        <li>
+          built low-cost <Link href="/research/efget-niu">egfet biosensors</Link> at{" "}
+          <strong>niu</strong>.
+        </li>
+        <li>
+          built <Link href="/projects/airaware">airaware</Link> at{" "}
+          <strong>lewis university</strong>. real-time air quality forecasting,{" "}
+          <Link href="/research/airaware-research">sensor placement optimization</Link>
+          .
+        </li>
+        <li>
+          built <Link href="/projects/neurovox">neurovox</Link>, parkinson&apos;s from
+          vocal biomarkers. 94.87% accuracy, 100% recall.
+        </li>
+        <li>
+          designed <Link href="/projects/allergx">allergx</Link>, rna aptaswitch
+          therapy for ige-mediated allergy. won <strong>tks moonshot</strong>.
+        </li>
+        <li>
+          built <Link href="/projects/cropsia">cropsia</Link> (cnn, 87k drone images,
+          38 diseases) and <Link href="/projects/bambiotic">bambiotic</Link>.
+          hackathons.
+        </li>
+        <li>
+          swe at <Link href="/work/plasnomic">plasnomic</Link>, building prism. also{" "}
+          <Link href="/projects/neumeric">neumeric</Link>, bio-intelligence
+          infrastructure.
+        </li>
+        <li>
+          also built <Link href="/projects/credix">credix</Link> (p2p microlending),{" "}
+          <Link href="/projects/orbyt">orbyt</Link> (compliance automation),{" "}
+          <Link href="/projects/ar-x-finlit">ar-x-finlit</Link> (gen-z retention for
+          cibc), and <Link href="/projects/edufin">edufin</Link> (defi incubator,
+          ghana).
+        </li>
+        <li>
+          <Link href="/work/commissioner-naperville">
+            <strong>naperville riverwalk commission</strong>
+          </Link>
+          . 1 of 2 student commissioners, handles $3m/yr.
+        </li>
+        <li>
+          exec officer,{" "}
+          <Link href="/work/ipsd-204">
+            <strong>ipsd 204</strong> student advisory board
+          </Link>
+          . 26,000 students. built{" "}
+          <a href="https://mosaic-204.vercel.app/">mosaic</a>.
+        </li>
+        <li>
+          teen advisory board, <Link href="/work/alive-center">alive center</Link>.
+          surgical volunteer,{" "}
+          <Link href="/work/edward-elmhurst">
+            <strong>edward-elmhurst</strong>
+          </Link>
+          . vp,{" "}
+          <Link href="/work/alzheimers-foundation">
+            <strong>alzheimer&apos;s foundation of america</strong>
+          </Link>
+          .
+        </li>
+        <li>
+          wrote{" "}
+          <Link href="/thoughts/cost-of-knowing">
+            the cost of knowing is approaching zero
+          </Link>
+          , on why questions got expensive when answers got free.
+        </li>
+      </ul>
 
-        <p>previously:</p>
+      <p>things i believe:</p>
 
-        <ul>
-          <li>
-            presented{" "}
-            <a
-              href="https://www.vocl.dev/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-with-arrow"
-            >
-              vocl
-            </a>
-            , an EMG-based thought-to-speech system, @{" "}
-            <a
-              href="https://conrad.spacecenter.org/2026-awards/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-with-arrow"
-            >
-              NASA
-            </a>{" "}
-            &amp; won $1.16m
-          </li>
-          <li>
-            co-founded{" "}
-            <a
-              href="https://buildabiz.net/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-with-arrow"
-            >
-              a financial literacy organization
-            </a>{" "}
-            with 2k+ students, $20k+ raised, and 50+ camps
-          </li>
-          <li>
-            finalist @{" "}
-            <a
-              href="https://conrad.spacecenter.org/2026-awards/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-with-arrow"
-            >
-              Conrad Challenge
-            </a>
-            ,{" "}
-            <a
-              href="https://blueoceancompetition.org/2025-2026-winners/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-with-arrow"
-            >
-              Blue Ocean Competition
-            </a>
-            , ISEF, Diamond Challenge
-          </li>
-          <li>
-            <span style={{ whiteSpace: "nowrap" }}>
-              researched bayesian change-point detection for crypto prices @ Northwestern, 2x
-              accepted{" "}
-              <a
-                href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6375438"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-with-arrow"
-              >
-                IEEE
-              </a>
-            </span>
-          </li>
-          <li>
-            independently researched deep learning applications in agent based modeling, accepted
-            to the{" "}
-            <a
-              href="https://esee2026ghent.be/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-with-arrow"
-            >
-              European Society for Ecological Economics
-            </a>
-          </li>
-          <li>
-            researched{" "}
-            <a
-              href="https://drive.google.com/file/d/1CFp8l556pllMaE0TpKhbYdBqIqSiA8JD/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-with-arrow"
-            >
-              low-cost EFGET biosensors
-            </a>{" "}
-            @ NIU
-          </li>
-          <li>
-            built{" "}
-            <a
-              href="https://airaware-lewis.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-with-arrow"
-            >
-              airaware
-            </a>
-            , an ML pipeline forecasting campus air quality in real time @ LewisU
-          </li>
-        </ul>
+      <ul>
+        <li>chase asymmetric bets</li>
+        <li>build things that matter</li>
+        <li>optimize for usefulness</li>
+        <li>ship relentlessly</li>
+        <li>range is leverage</li>
+        <li>think in systems</li>
+      </ul>
 
-        <hr />
-
-        <p className="footer-blurb">
-          always adding more stuff.
-          <br />
-          reach me at <a href="mailto:me@idhant.dev">me@idhant.dev</a>
-        </p>
-      </main>
-
-      <SiteFooter />
-    </div>
+      <p>
+        <a href="mailto:me@idhant.dev">me@idhant.dev</a> ·{" "}
+        <a href="https://github.com/IdhantRanjan">github</a> ·{" "}
+        <a href="https://scholar.google.com/citations?user=Hh1nMCkAAAAJ&hl=en">
+          scholar
+        </a>{" "}
+        · <a href="https://www.linkedin.com/in/idhant-ranjan-078104254">linkedin</a>
+      </p>
+    </main>
   );
 }

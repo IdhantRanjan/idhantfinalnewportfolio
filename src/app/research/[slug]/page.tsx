@@ -1,18 +1,18 @@
 import { notFound } from "next/navigation";
 import { research } from "@/data/items";
-import DetailPage from "@/components/DetailPage";
+import PlainDetail from "@/components/PlainDetail";
 
 export function generateStaticParams() {
-  return research.map((r) => ({ slug: r.slug }));
+  return research.map((i) => ({ slug: i.slug }));
 }
 
-export default async function ResearchDetail({
+export default async function Page({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const item = research.find((r) => r.slug === slug);
+  const item = research.find((i) => i.slug === slug);
   if (!item) notFound();
-  return <DetailPage item={item} backHref="/research" backLabel="research" />;
+  return <PlainDetail item={item} />;
 }

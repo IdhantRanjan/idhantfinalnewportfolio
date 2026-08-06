@@ -11,13 +11,6 @@ body {
   overscroll-behavior: none;
 }
 
-/* Home fits exactly one screen — no scroll. Detail pages scroll normally. */
-html:has(.home),
-html:has(.home) body {
-  overflow: hidden;
-  height: 100%;
-}
-
 html {
   background: #ffffff;
 }
@@ -38,8 +31,21 @@ main {
   padding: 3vh 24px 3vh;
 }
 
-.home {
-  font-size: clamp(10px, 1.6vh, 14px);
+/*
+ * Home locks to exactly one screen only when the viewport is big enough to
+ * hold it. On phones and short windows it scrolls normally so nothing is
+ * clipped — content visibility beats the no-scroll trick.
+ */
+@media (min-width: 860px) and (min-height: 660px) {
+  html:has(.home),
+  html:has(.home) body {
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .home {
+    font-size: clamp(10px, 1.6vh, 14px);
+  }
 }
 
 p {
@@ -112,4 +118,40 @@ a:hover {
 
 .essay p {
   margin-bottom: 18px;
+}
+
+/* Phones and small tablets */
+@media (max-width: 640px) {
+  body {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  main {
+    padding: 28px 20px 48px;
+  }
+
+  ul {
+    padding-left: 18px;
+    margin-bottom: 16px;
+  }
+
+  li {
+    margin-bottom: 7px;
+  }
+
+  .detail,
+  .essay {
+    padding: 28px 20px 56px;
+  }
+
+  .essay p {
+    margin-bottom: 16px;
+  }
+
+  /* Bigger tap targets, and never let a long link overflow the screen */
+  a {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
 }

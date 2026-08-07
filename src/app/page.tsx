@@ -143,7 +143,15 @@ export default function Home() {
           <Link href="/thoughts/cost-of-knowing">
             the cost of knowing is approaching zero
           </Link>
-          , on why questions got expensive when answers got free.
+          ,{" "}
+          <Link href="/thoughts/blank-spot">
+            we are approaching the end of the blank spot
+          </Link>
+          , and{" "}
+          <Link href="/thoughts/becoming-useful">
+            a generalist&apos;s guide to becoming useful
+          </Link>
+          .
         </li>
       </ul>
 

@@ -39,7 +39,7 @@ main {
  */
 @media (min-width: 860px) and (min-height: 620px) {
   .home {
-    font-size: clamp(9px, 1.45vh, 17px);
+    font-size: clamp(9px, 1.38vh, 17px);
     /*
      * Width in em, not px. With a fixed px width, a larger font wraps into more
      * lines, so height grew faster than the type did and no single scale factor

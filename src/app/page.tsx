@@ -13,6 +13,15 @@ export default function Home() {
 
       <ul>
         <li>
+          founder,{" "}
+          <a href="https://impulselabs.org">
+            <strong>impulse labs</strong>
+          </a>
+          . sound and force sensing for self-labeling robot data. contact mic + load
+          cell on the same clock as video, under 5 ms. audio and force annotate
+          themselves. video does not.
+        </li>
+        <li>
           building <Link href="/projects/vocl">vocl</Link>. surface emg to speech,
           real-time.
         </li>

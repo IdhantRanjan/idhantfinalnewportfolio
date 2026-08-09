@@ -4,22 +4,21 @@ export default function Home() {
   return (
     <main className="home">
       <p>
-        hi, i&apos;m <strong>idhant ranjan</strong>. i work on physical ai,
-        bio-intelligence infrastructure, neural interfaces, and the ml layer
-        underneath.
+        hi, i&apos;m <strong>idhant ranjan</strong>, co-founder @{" "}
+        <strong>impulse labs</strong>, building sound and force sensing for
+        self-labeling robot data. i work on physical ai, bio-intelligence
+        infrastructure, neural interfaces, and the ml layer underneath.
       </p>
 
       <p>right now i&apos;m:</p>
 
       <ul>
         <li>
-          founder,{" "}
+          building @{" "}
           <a href="https://impulselabs.org">
             <strong>impulse labs</strong>
           </a>
-          . sound and force sensing for self-labeling robot data. contact mic + load
-          cell on the same clock as video, under 5 ms. audio and force annotate
-          themselves. video does not.
+          .
         </li>
         <li>
           building <Link href="/projects/vocl">vocl</Link>. surface emg to speech,

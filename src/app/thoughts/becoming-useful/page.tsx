@@ -99,9 +99,6 @@ export default function BecomingUsefulPage() {
 
       <p>It also looks like the only durable version of the job.</p>
 
-      <p className="back">
-        <Link href="/">← back</Link>
-      </p>
     </main>
   );
 }

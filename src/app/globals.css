@@ -1,3 +1,13 @@
+/*
+ * Impulse Labs palette, lifted from the deployed site's computed styles:
+ *   background #faf7f0, ink #2b2828, muted #857e78, Inter, 15px / 1.65
+ */
+:root {
+  --bg: #faf7f0;
+  --ink: #2b2828;
+  --muted: #857e78;
+}
+
 *,
 *::before,
 *::after {
@@ -12,21 +22,21 @@ body {
 }
 
 html {
-  background: #ffffff;
+  background: var(--bg);
 }
 
 body {
-  background: #ffffff;
-  color: #000000;
-  font-family: var(--font-geist), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 main {
-  max-width: 720px;
+  max-width: 672px;
   margin: 0 auto;
   padding: 2.6vh 24px 2.6vh;
 }
@@ -35,19 +45,16 @@ main {
  * The home page scales its type to the viewport so it lands on one screen at
  * typical laptop sizes. It is never clipped: if it still overflows (very short
  * window), the page scrolls. Spacing is in em so shrinking the type actually
- * shrinks the page.
+ * shrinks the page. Width is in em so the line count stays constant as the
+ * type scales.
  */
 @media (min-width: 860px) and (min-height: 620px) {
-  .home {
-    font-size: clamp(9px, 1.38vh, 17px);
-    /*
-     * Width in em, not px. With a fixed px width, a larger font wraps into more
-     * lines, so height grew faster than the type did and no single scale factor
-     * fit every window. Scaling the column with the font keeps the line count
-     * constant, so height tracks font size linearly and ~98% fill holds from
-     * 620px tall upward.
-     */
-    max-width: 52em;
+  .home,
+  .previously {
+    font-size: clamp(9px, 1.4vh, 13px);
+    /* Fixed column now: the page fits easily at this size, so the width no
+       longer needs to scale with the type to control line count. */
+    max-width: 640px;
   }
 }
 
@@ -55,32 +62,44 @@ p {
   margin-bottom: 0.72em;
 }
 
+.footer {
+  margin-top: 1.9em;
+}
+
+.more {
+  margin-top: 0.5em;
+}
+
+/* Impulse-style bullets: no native marker, muted dot via ::before */
 ul {
-  padding-left: 1.35em;
+  list-style: none;
+  padding-left: 0;
   margin-bottom: 0.95em;
-  list-style: disc;
 }
 
 li {
-  margin-bottom: 0.16em;
+  position: relative;
+  padding-left: 1.18em;
+  margin-bottom: 0.28em;
 }
 
-li::marker {
-  color: #999999;
+li::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  color: var(--muted);
 }
 
 strong {
   font-weight: 600;
-  letter-spacing: -0.005em;
 }
 
-/* Links — highlight just the linked words on hover */
 a {
-  color: #000000;
+  color: var(--ink);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
-  text-decoration-color: #bdbdbd;
+  text-decoration-color: var(--muted);
   border-radius: 2px;
   padding: 0 1px;
   margin: 0 -1px;
@@ -90,14 +109,13 @@ a {
 }
 
 a:hover {
-  background-color: #ffe89c;
-  text-decoration-color: #000000;
+  background-color: #f0e6c8;
+  text-decoration-color: var(--ink);
 }
 
 /* Detail pages */
 .detail {
-  padding: 48px 24px 72px;
-  line-height: 1.6;
+  padding: 72px 24px 96px;
 }
 
 .detail p {
@@ -106,7 +124,7 @@ a:hover {
 
 .detail-head {
   font-weight: 600;
-  margin-top: 20px;
+  margin-top: 32px;
   margin-bottom: 3px;
 }
 
@@ -114,7 +132,7 @@ a:hover {
   font-size: 13px;
 }
 
-/* Essay pages — slightly roomier for reading */
+/* Essay pages — roomier for reading */
 .essay {
   max-width: 620px;
 }
@@ -127,16 +145,11 @@ a:hover {
 @media (max-width: 640px) {
   body {
     font-size: 15px;
-    line-height: 1.55;
+    line-height: 1.6;
   }
 
   main {
     padding: 28px 20px 48px;
-  }
-
-  ul {
-    padding-left: 18px;
-    margin-bottom: 16px;
   }
 
   li {
@@ -152,7 +165,6 @@ a:hover {
     margin-bottom: 16px;
   }
 
-  /* Bigger tap targets, and never let a long link overflow the screen */
   a {
     overflow-wrap: break-word;
     word-break: break-word;

@@ -30,9 +30,6 @@ export default function PlainDetail({ item }: { item: DetailItem }) {
         </div>
       ))}
 
-      <p className="back">
-        <Link href="/">← back</Link>
-      </p>
     </main>
   );
 }

@@ -109,9 +109,6 @@ export default function BlankSpotPage() {
         decade lives in the gap between what exists and what anyone can currently see.
       </p>
 
-      <p className="back">
-        <Link href="/">← back</Link>
-      </p>
     </main>
   );
 }

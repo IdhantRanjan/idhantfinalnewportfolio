@@ -96,57 +96,6 @@ export default function Home() {
           .
         </li>
         <li>
-          built <Link href="/projects/neurovox">neurovox</Link>, parkinson&apos;s from
-          vocal biomarkers. 94.87% accuracy, 100% recall.
-        </li>
-        <li>
-          designed <Link href="/projects/allergx">allergx</Link>, rna aptaswitch
-          therapy for ige-mediated allergy. won <strong>tks moonshot</strong>.
-        </li>
-        <li>
-          built <Link href="/projects/cropsia">cropsia</Link> (cnn, 87k drone images,
-          38 diseases) and <Link href="/projects/bambiotic">bambiotic</Link>.
-          hackathons.
-        </li>
-        <li>
-          swe at <Link href="/work/plasnomic">plasnomic</Link>, building prism. also{" "}
-          <Link href="/projects/neumeric">neumeric</Link>, bio-intelligence
-          infrastructure.
-        </li>
-        <li>
-          also built <Link href="/projects/credix">credix</Link> (p2p microlending),{" "}
-          <Link href="/projects/orbyt">orbyt</Link> (compliance automation),{" "}
-          <Link href="/projects/ar-x-finlit">ar-x-finlit</Link> (gen-z retention for
-          cibc), and <Link href="/projects/edufin">edufin</Link> (defi incubator,
-          ghana).
-        </li>
-        <li>
-          <Link href="/work/commissioner-naperville">
-            <strong>naperville riverwalk commission</strong>
-          </Link>
-          . 1 of 2 student commissioners, handles $3m/yr.
-        </li>
-        <li>
-          exec officer,{" "}
-          <Link href="/work/ipsd-204">
-            <strong>ipsd 204</strong> student advisory board
-          </Link>
-          . 26,000 students. built{" "}
-          <a href="https://mosaic-204.vercel.app/">mosaic</a>.
-        </li>
-        <li>
-          teen advisory board, <Link href="/work/alive-center">alive center</Link>.
-          surgical volunteer,{" "}
-          <Link href="/work/edward-elmhurst">
-            <strong>edward-elmhurst</strong>
-          </Link>
-          . vp,{" "}
-          <Link href="/work/alzheimers-foundation">
-            <strong>alzheimer&apos;s foundation of america</strong>
-          </Link>
-          .
-        </li>
-        <li>
           wrote{" "}
           <Link href="/thoughts/cost-of-knowing">
             the cost of knowing is approaching zero
@@ -163,6 +112,10 @@ export default function Home() {
         </li>
       </ul>
 
+      <p className="more">
+        and much, much <Link href="/previously">more</Link>.
+      </p>
+
       <p>things i believe:</p>
 
       <ul>
@@ -174,7 +127,7 @@ export default function Home() {
         <li>think in systems</li>
       </ul>
 
-      <p>
+      <p className="footer">
         <a href="mailto:me@idhant.dev">me@idhant.dev</a> ·{" "}
         <a href="https://github.com/IdhantRanjan">github</a> ·{" "}
         <a href="https://scholar.google.com/citations?user=Hh1nMCkAAAAJ&hl=en">

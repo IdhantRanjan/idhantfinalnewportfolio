@@ -96,9 +96,6 @@ export default function CostOfKnowingPage() {
         everything else got fast.
       </p>
 
-      <p className="back">
-        <Link href="/">← back</Link>
-      </p>
     </main>
   );
 }

@@ -5,9 +5,9 @@ export default function Home() {
     <main className="home">
       <p>
         hi, i&apos;m <strong>idhant ranjan</strong>, co-founder @{" "}
-        <strong>impulse labs</strong>, building sound and force sensing for
-        self-labeling robot data. i work on physical ai, bio-intelligence
-        infrastructure, neural interfaces, and the ml layer underneath.
+        <strong>impulse labs</strong>, building the event log for physical work
+        on factory floors. i work on physical ai, bio-intelligence infrastructure,
+        neural interfaces, and the ml layer underneath.
       </p>
 
       <p>right now i&apos;m:</p>
@@ -15,14 +15,17 @@ export default function Home() {
       <ul>
         <li>
           building @{" "}
-          <a href="https://impulselabs.org">
+          <Link href="/projects/impulse-labs">
             <strong>impulse labs</strong>
-          </a>
-          .
+          </Link>
+          . worn and fixed cameras, $13 ble/imu nodes, torque and plc/mes feeds onto
+          a jetson-class box on site. one row per step, queried for cycle time,
+          bottleneck drift, and standard vs actual work.
         </li>
         <li>
-          building <Link href="/projects/vocl">vocl</Link>. surface emg to speech,
-          real-time.
+          building <Link href="/projects/vocl">vocl</Link>. surface emg to speech.
+          cnn-lstm decodes subvocal activation into phonemes, real-time tts output.
+          built for als, laryngeal cancer, severe dysarthria.
         </li>
         <li>
           for it:{" "}
@@ -46,7 +49,11 @@ export default function Home() {
           <Link href="/research/hft-mizzou">
             <strong>mizzou</strong>
           </Link>
-          , quant finance. multimodal ipo prediction from s-1 filings.
+          , quant finance. multimodal ipo prediction from s-1 filings. finbert over
+          text, clip vit-l/14 over embedded images, financial ratios, cross-attention
+          fusion. ~1,800 us ipos 2010&ndash;2024 against crsp with delisting
+          adjustments. negative out-of-sample r², significant text-channel rank ics
+          at 3/6/12/24mo.
         </li>
         <li>
           co-president, <Link href="/work/build-a-biz">build-a-biz</Link>. 1,300+
@@ -66,10 +73,13 @@ export default function Home() {
 
       <ul>
         <li>
-          built <Link href="/research/bopcd-northwestern">dlsci</Link> over 1.5 yrs at{" "}
+          built <Link href="/research/bopcd-northwestern">dlsci</Link> at{" "}
           <strong>northwestern</strong>. bayesian changepoint early-warning for defi
-          liquidity stress. recall 1.000, 129h lead time.{" "}
-          <strong>iiai cdef 2026</strong>, ieee publication.
+          liquidity stress. 9/9 events, 129h median lead time, brier 0.055.{" "}
+          <a href="https://ieeexplore.ieee.org/document/11685081">
+            <strong>ieee, iiai-aai 2026</strong>
+          </a>
+          .
         </li>
         <li>
           presented{" "}
@@ -80,18 +90,22 @@ export default function Home() {
           <a href="/esee-2026-certificate.pdf">certificate</a>.
         </li>
         <li>
-          adaptive feature importance for heterogeneous graphs.{" "}
+          adaptive feature importance scoring for heterogeneous graphs.{" "}
           <strong>ieee iccsic 2026</strong>,{" "}
           <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6375438">ssrn</a>
           .
         </li>
         <li>
           built low-cost <Link href="/research/efget-niu">egfet biosensors</Link> at{" "}
-          <strong>niu</strong>.
+          <strong>niu</strong>. characterized how surface functionalization shifts
+          transconductance against gate voltage, via double-layer capacitance
+          protocols and modified gate sweeps.
         </li>
         <li>
           built <Link href="/projects/airaware">airaware</Link> at{" "}
-          <strong>lewis university</strong>. real-time air quality forecasting,{" "}
+          <strong>lewis university</strong>. xgboost and lstm ensembles over pm2.5,
+          no2, o3, co2 sensor feeds plus weather and temporal features. deployed
+          dashboard,{" "}
           <Link href="/research/airaware-research">sensor placement optimization</Link>
           .
         </li>
@@ -115,6 +129,17 @@ export default function Home() {
       <p className="more">
         and much, much <Link href="/previously">more</Link>.
       </p>
+
+      <p>questions that interest me:</p>
+
+      <ul>
+        <li>what changes when models get bodies, sensors, and consequences?</li>
+        <li>how much of physical work is legible to a sensor?</li>
+        <li>can expertise be captured, compressed, and handed to someone else?</li>
+        <li>what is the ml layer underneath human capability and development?</li>
+        <li>where is the bandwidth limit between a nervous system and a machine?</li>
+        <li>what does biology compute that we have not learned to copy?</li>
+      </ul>
 
       <p>things i believe:</p>
 

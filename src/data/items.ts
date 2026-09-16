@@ -17,6 +17,42 @@ export type WorkItem = DetailItem & { type: "work" | "volunteer" };
 
 export const projects: DetailItem[] = [
   {
+    slug: "impulse-labs",
+    title: "impulse labs",
+    description: "an event log of physical work on factory floors",
+    tag: "co-founder",
+    externalLink: "https://impulselabs.org",
+    externalLinkLabel: "impulselabs.org",
+    overview:
+      "software produces event logs. Celonis mines them and is worth roughly $13B. factory floors produce no equivalent log. that dataset is larger and nobody has it. impulse labs builds the sensors that produce it.",
+    sections: [
+      {
+        heading: "the gap",
+        body: "ERP and MES systems record transactions. a part was booked at 09:14. the eleven minutes the operator spent finding a fixture appear nowhere. the transaction layer captures outcomes and discards the work that produced them, which is where nearly all the recoverable time lives.",
+      },
+      {
+        heading: "how plants measure today",
+        body: "to time a task, a plant sends an industrial engineer with a stopwatch. Stellantis listed that job in 2026. a consultant study costs $15,000 to $30,000 and measures a single week. plants then run on those numbers for years, as though the floor were stationary.",
+      },
+      {
+        heading: "the instrument",
+        body: "worn cameras cover work that moves — changeovers, setups, maintenance. fixed cameras cover repetitive stations. $13 BLE and IMU nodes cover motion where cameras are unwanted. torque tools and PLC/MES feeds supply machine-side ground truth. processing runs on a Jetson-class box on site.",
+      },
+      {
+        heading: "the log",
+        body: "one row per step: process, step, t_start, t_end, sequence, deviation_from_standard, location, tool_interactions, linked_outcome, anonymized_operator_context. against that log you can query cycle time and variance per operator-station pair by step, where bottlenecks sit and how they drift, standard work against actual work, line balance on observed rather than assumed times, waiting and walking and searching, and what the fastest operators do at the hand-tool level.",
+      },
+      {
+        heading: "privacy is a design constraint",
+        body: "video is processed on the device and never stored. events only. blurred faces still identify people and gait re-identification defeats blurring, so the answer is to keep no video rather than to anonymize it. individual scoring does not go to management. the wearer sees their own ergonomic feedback and nobody else does. we sell throughput to operations and do not sell scoring to HR. the product observes work, not workers.",
+      },
+      {
+        heading: "roadmap",
+        body: "changeover first: decompose each changeover, benchmark the fastest observed run, quantify recoverable minutes, track first-off scrap. hardware for one line is about $1,100. then, against the same log — expert skill capture and generated standard work, a skill graph from observed competency, defect root cause against QC and torque data, plant-wide flow and walk/search waste, a maintenance copilot on glasses, and closed-loop scheduling on observed times.",
+      },
+    ],
+  },
+  {
     slug: "vocl",
     title: "vocl",
     description: "EMG-based thought-to-speech",
@@ -311,45 +347,63 @@ export const projects: DetailItem[] = [
 export const research: DetailItem[] = [
   {
     slug: "bopcd-northwestern",
-    title: "BOPCD @ Northwestern",
-    description: "Bayesian detection for change points in crypto prices",
+    title: "DLSCI @ Northwestern",
+    description: "Bayesian early-warning index for DeFi liquidity stress",
     tag: "researcher",
+    externalLink: "https://ieeexplore.ieee.org/document/11685081",
+    externalLinkLabel: "IEEE Xplore",
     overview:
-      "at Northwestern, I'm applying Bayesian Online Change Point Detection (BOCPD) to cryptocurrency price distributions — building a real-time system that identifies when market regimes shift, as distinct from when prices simply move.",
+      "the DeFi Liquidity Stress Changepoint Index (DLSCI) is a pool-level online monitoring framework built on Bayesian Online Changepoint Detection. it catches every stress event in the evaluation set with a 129-hour median lead time, while keeping the alert burden low enough for an on-call risk team to actually work. sole-authored, published in the IEEE proceedings of IIAI-AAI 2026.",
     sections: [
       {
-        heading: "what is change point detection",
-        body: "financial time series aren't stationary. prices, volatility, and correlations all shift over time, driven by macro events, regulatory changes, and structural shifts in market participation. identifying when these structural breaks occur — in real time, not retrospectively — is valuable for risk management and systematic trading. BOCPD maintains a running probability distribution over when the last change point occurred, updating continuously with each new data point.",
+        heading: "two constraints that fight each other",
+        body: "a usable early-warning system for DeFi liquidity crises has to satisfy two things at once: full recall, because a missed crisis is the whole failure mode, and a bounded alert burden, because a monitor that pages an on-call team sixty times a month gets muted and stops existing. every existing approach breaks one of them. statistical baselines flood operators with alerts. machine-learning classifiers miss heterogeneous events. threshold monitors offer no principled uncertainty at all.",
       },
       {
-        heading: "application to crypto",
-        body: "cryptocurrency markets are especially prone to distributional shifts: regime transitions between bull and bear markets, liquidity crises, exchange failures, and DeFi contagion cascades. these shifts are fast and often irreversible. BOCPD applied to crypto price distributions enables real-time detection of these transitions as they happen — not after the damage is done.",
+        heading: "method",
+        body: "Bayesian Online Changepoint Detection maintains a run-length posterior — the probability distribution over how long the current regime has lasted — in closed form at every hourly step. closed-form matters operationally: there is no retraining loop, the monitor just runs. it also yields calibrated uncertainty, which heuristic thresholds cannot provide, so the output is a probability a risk team can reason about rather than a binary flag.",
       },
       {
-        heading: "p2p lending contagion",
-        body: "the broader research at Northwestern also investigates contagion default in peer-to-peer lending systems. the core question: how do individual borrower defaults propagate through lending networks, and when does systemic failure become likely? the goal is to understand how network topology — who lends to whom — determines the speed and extent of default cascades, and to identify early warning indicators before systemic failure.",
+        heading: "evaluation",
+        body: "nine heterogeneous DeFi stress events spanning 2022 through 2024, against three baselines. the events are deliberately varied rather than one repeated failure mode, since the thing being tested is whether the method generalizes across kinds of crisis.",
+      },
+      {
+        heading: "results",
+        body: "DLSCI achieves perfect recall, 9 of 9 events, with a 129-hour median lead time and 25.6 false alarms per month, at a Brier score of 0.055. it is the only method evaluated that clears all three bars simultaneously: full recall, fewer than 30 false alarms a month, and calibrated probabilistic output. the Z-score baseline matches recall but produces 56% more false alarms, at 58.1 per month. XGBoost detects 2 of 9 events, a recall of 0.222 — a supervised classifier struggles precisely because the events are heterogeneous and few.",
+      },
+      {
+        heading: "publication",
+        body: "\"Bayesian Online Changepoint Detection for DeFi Liquidity Stress: A Pool-Level Early-Warning Index,\" published in the 2026 20th IIAI International Congress on Advanced Applied Informatics (IIAI-AAI), Fukui, Japan, 12-17 July 2026. DOI 10.23919/IIAI-AAICPS00095.2026.00171.",
       },
     ],
   },
   {
     slug: "hft-mizzou",
-    title: "HFT @ Mizzou",
-    description: "researching the HFT paradox in the US stock market",
+    title: "Multimodal IPO Prediction @ Mizzou",
+    description: "FinBERT, CLIP, and financials fused to predict post-IPO returns",
     tag: "researcher",
     overview:
-      "at the University of Missouri, I'm investigating the HFT paradox — the empirically documented phenomenon where high-frequency trading simultaneously improves liquidity under normal market conditions and removes it catastrophically during stress events.",
+      "predicting post-IPO returns from the S-1 filing itself — the text, the embedded images, and the financial ratios — fused into one model. conducted in quantitative finance at the University of Missouri. the headline result is a null, and the interesting part is which channel survives it.",
     sections: [
       {
-        heading: "the paradox",
-        body: "HFT firms operate by posting tight bid-ask spreads and absorbing order flow at high speed. in normal markets, this measurably improves price discovery and lowers transaction costs. but HFT strategies are systematically risk-averse: when volatility spikes, they pull their quotes simultaneously and at scale, removing the very liquidity that market participants had come to rely on. the 2010 Flash Crash is the canonical demonstration.",
+        heading: "the setup",
+        body: "an S-1 is the last dense disclosure before a company is priced by a market, and most of it is unstructured. the question is whether the parts nobody models — the language of the risk factors, the charts and product photography management chose to include — carry signal about returns beyond the financials everyone already prices in.",
       },
       {
-        heading: "the research",
-        body: "statistical analysis of order book dynamics across different volatility regimes — measuring how HFT participation rates, quote-to-trade ratios, and effective spreads evolve during stress events. case studies include the 2010 Flash Crash, the 2020 COVID-19 volatility shock, and several crypto market dislocations. the goal is to characterize HFT behavior precisely enough to model its contribution to systemic fragility.",
+        heading: "architecture",
+        body: "three encoders over the same filing. FinBERT over the S-1 text, CLIP ViT-L/14 over the embedded images, and a tabular branch over financial ratios. the three representations are combined with cross-attention fusion rather than concatenation, so each channel can condition on the others instead of being averaged into them.",
       },
       {
-        heading: "why it matters",
-        body: "understanding HFT behavior under stress directly informs market structure regulation: whether circuit breakers are calibrated correctly, whether maker-rebate programs should be restructured to retain liquidity providers during volatility, and what disclosure requirements might reduce fragility without eliminating the efficiency gains HFT provides in calm markets.",
+        heading: "data",
+        body: "roughly 1,800 US IPOs from 2010 through 2024, evaluated against CRSP returns with delisting adjustments — necessary because IPOs that fail leave the sample, and ignoring that quietly inflates every result in the literature.",
+      },
+      {
+        heading: "the result is a null",
+        body: "out-of-sample R-squared is negative across all models and all horizons. the fused model does not beat the mean. but rank information coefficients on the text channel are significant at 3, 6, 12, and 24 months — the model orders IPOs better than chance while failing to predict magnitudes. that pattern is consistent with a weak, slow signal in the language of the filing that is not tradable at the level of point forecasts.",
+      },
+      {
+        heading: "why report it",
+        body: "a negative out-of-sample R-squared with a significant rank IC is a more honest thing to publish than a tuned positive result, and it constrains what the next attempt should try: ranking objectives rather than regression, and longer horizons rather than shorter ones.",
       },
     ],
   },
@@ -390,7 +444,7 @@ export const research: DetailItem[] = [
     externalLink: "https://esee2026ghent.be/",
     externalLinkLabel: "ESEE 2026, Ghent",
     overview:
-      "this research investigates how deep learning — specifically recurrent and graph neural networks — can augment agent-based models (ABMs) to improve their ability to simulate and predict complex adaptive systems. accepted to the European Social Simulation and Economics conference in Ghent, Belgium.",
+      "this research investigates how deep learning — specifically recurrent and graph neural networks — can augment agent-based models (ABMs) to improve their ability to simulate and predict complex adaptive systems. presented at the 16th conference of the European Society for Ecological Economics (ESEE) in Ghent, Belgium.",
     sections: [
       {
         heading: "the limitation of ABMs",
@@ -402,7 +456,7 @@ export const research: DetailItem[] = [
       },
       {
         heading: "ESEE 2026",
-        body: "the paper was accepted to the European Social Simulation and Economics conference in Ghent, Belgium — one of the leading interdisciplinary venues for computational social science and agent-based modeling. the contribution proposes a framework for integrating learned agent behaviors with interpretable simulation, with applications to economic modeling, epidemiology, and policy impact analysis.",
+        body: "the paper, \"bridging micro-behavioral heterogeneity and macro policy outcomes,\" was presented at the 16th conference of the European Society for Ecological Economics (ESEE) in Ghent, Belgium — a leading venue for ecological economics and computational policy evaluation. the contribution proposes a framework for integrating learned agent behaviors with interpretable simulation, with applications to economic modeling, epidemiology, and policy impact analysis.",
       },
     ],
   },

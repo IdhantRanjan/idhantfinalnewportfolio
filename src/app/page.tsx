@@ -23,6 +23,15 @@ export default function Home() {
           bottleneck drift, and standard vs actual work.
         </li>
         <li>
+          built <a href="https://fly.idhant.dev"><strong>fly nose</strong></a>. pulled the
+          olfactory circuit out of the flywire connectome and ran it as a locality-sensitive
+          hash. 50 glomeruli, 2,597 kenyon cells, one apl neuron contacting 100% of them. real
+          wiring loses to degree-matched random at nearest-neighbor retrieval, 0.4886 vs 0.5270
+          map. a bipartite configuration model preserving both margins reproduces ~80% of the
+          gap, so the cost is glomerular sampling bias: dp1m reaches 564 kenyon cells, vl1
+          reaches zero.
+        </li>
+        <li>
           building <Link href="/projects/vocl">vocl</Link>. surface emg to speech.
           cnn-lstm decodes subvocal activation into phonemes, real-time tts output.
           built for als, laryngeal cancer, severe dysarthria.

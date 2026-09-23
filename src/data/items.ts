@@ -17,38 +17,34 @@ export type WorkItem = DetailItem & { type: "work" | "volunteer" };
 
 export const projects: DetailItem[] = [
   {
-    slug: "impulse-labs",
-    title: "impulse labs",
-    description: "an event log of physical work on factory floors",
+    slug: "duet-labs",
+    title: "duet labs",
+    description: "process-mining human collaboration into robotics training data",
     tag: "co-founder",
-    externalLink: "https://impulselabs.org",
-    externalLinkLabel: "impulselabs.org",
+    externalLink: "https://duetlabs.co",
+    externalLinkLabel: "duetlabs.co",
     overview:
-      "software produces event logs. Celonis mines them and is worth roughly $13B. factory floors produce no equivalent log. that dataset is larger and nobody has it. impulse labs builds the sensors that produce it.",
+      "Duet process-mines human collaboration into workflow data for industrial operators and training data for frontier labs. the bet is that human-human interaction data is robotics' next scaling law.",
     sections: [
       {
         heading: "the gap",
-        body: "ERP and MES systems record transactions. a part was booked at 09:14. the eleven minutes the operator spent finding a fixture appear nowhere. the transaction layer captures outcomes and discards the work that produced them, which is where nearly all the recoverable time lives.",
+        body: "general-purpose robots have seen millions of hours of people working alone and almost none of people working together. to our knowledge the largest paired human-collaboration dataset is ETH Zurich's CoMind, at 41 hours. the single-actor corpus that everything is trained on simply does not contain the behavior a robot needs in order to work next to someone.",
       },
       {
-        heading: "how plants measure today",
-        body: "to time a task, a plant sends an industrial engineer with a stopwatch. Stellantis listed that job in 2026. a consultant study costs $15,000 to $30,000 and measures a single week. plants then run on those numbers for years, as though the floor were stationary.",
+        heading: "what the data captures",
+        body: "physical coordination — handoffs, shared loads, joint manipulation. task coordination — role division, sequencing, turn-taking. interactive adaptation — intent signaling, response, correction, recovery. captured across diverse real-world worksites rather than staged in a lab, because coordination that has never been under time pressure is not the thing you want to learn from.",
       },
       {
-        heading: "the instrument",
-        body: "worn cameras cover work that moves — changeovers, setups, maintenance. fixed cameras cover repetitive stations. $13 BLE and IMU nodes cover motion where cameras are unwanted. torque tools and PLC/MES feeds supply machine-side ground truth. processing runs on a Jetson-class box on site.",
+        heading: "one dataset, two customers",
+        body: "operators receive workflow intelligence that reduces bottlenecks across teams. labs receive training data for robots that will work alongside those teams. the same capture serves both, which is what makes the economics work: the industrial side pays for collection while the dataset compounds.",
       },
       {
-        heading: "the log",
-        body: "one row per step: process, step, t_start, t_end, sequence, deviation_from_standard, location, tool_interactions, linked_outcome, anonymized_operator_context. against that log you can query cycle time and variance per operator-station pair by step, where bottlenecks sit and how they drift, standard work against actual work, line balance on observed rather than assumed times, waiting and walking and searching, and what the fastest operators do at the hand-tool level.",
+        heading: "why now",
+        body: "three shifts converging. supply-side: 78% of large manufacturers are putting more than 20% of improvement budgets into smart manufacturing (Deloitte, 2025). model-side: 1,000x more pretraining raised average task performance from 20% to 53% (Dyna Robotics, 2026). demand-side: robotics data spend is expected to exceed $3B over the next two years (Bessemer, 2026).",
       },
       {
-        heading: "privacy is a design constraint",
-        body: "video is processed on the device and never stored. events only. blurred faces still identify people and gait re-identification defeats blurring, so the answer is to keep no video rather than to anonymize it. individual scoring does not go to management. the wearer sees their own ergonomic feedback and nobody else does. we sell throughput to operations and do not sell scoring to HR. the product observes work, not workers.",
-      },
-      {
-        heading: "roadmap",
-        body: "changeover first: decompose each changeover, benchmark the fastest observed run, quantify recoverable minutes, track first-off scrap. hardware for one line is about $1,100. then, against the same log — expert skill capture and generated standard work, a skill graph from observed competency, defect root cause against QC and torque data, plant-wide flow and walk/search waste, a maintenance copilot on glasses, and closed-loop scheduling on observed times.",
+        heading: "the team",
+        body: "three of us, and we have spent most of our lives building robots. between us: multimodal robotics hardware shipped for frontier lab contracts, HF0 (S26) and Founders, Inc. (Canopy) as Founders-in-Residence, assistive wearables that won millions in academic scholarships, edtech reaching 30k+ users, ML research at Northwestern and Boston University, and publications through IEEE, IIAI, and Harvard. this time we are building the data layer the robots learn from.",
       },
     ],
   },

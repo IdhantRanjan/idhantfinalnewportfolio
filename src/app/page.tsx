@@ -5,9 +5,10 @@ export default function Home() {
     <main className="home">
       <p>
         hi, i&apos;m <strong>idhant ranjan</strong>, co-founder @{" "}
-        <strong>impulse labs</strong>, building the event log for physical work
-        on factory floors. i work on physical ai, bio-intelligence infrastructure,
-        neural interfaces, and the ml layer underneath.
+        <strong>duet labs</strong>, process-mining human collaboration into
+        workflow data for industrial operators and training data for frontier labs.
+        i work on physical ai, bio-intelligence infrastructure, neural interfaces,
+        and the ml layer underneath.
       </p>
 
       <p>right now i&apos;m:</p>
@@ -15,12 +16,12 @@ export default function Home() {
       <ul>
         <li>
           building @{" "}
-          <Link href="/projects/impulse-labs">
-            <strong>impulse labs</strong>
+          <Link href="/projects/duet-labs">
+            <strong>duet labs</strong>
           </Link>
-          . worn and fixed cameras, $13 ble/imu nodes, torque and plc/mes feeds onto
-          a jetson-class box on site. one row per step, queried for cycle time,
-          bottleneck drift, and standard vs actual work.
+          . human-human interaction data as robotics&apos; next scaling law. physical
+          coordination, task coordination, and interactive adaptation captured across
+          real worksites.
         </li>
         <li>
           building <Link href="/projects/vocl">vocl</Link>. surface emg to speech.
@@ -68,13 +69,14 @@ export default function Home() {
           ), illinois to zambia.
         </li>
         <li>
-          built <a href="https://fly.idhant.dev"><strong>fly nose</strong></a>. pulled the
-          olfactory circuit out of the flywire connectome and ran it as a locality-sensitive
-          hash. 50 glomeruli, 2,597 kenyon cells, one apl neuron contacting 100% of them. real
-          wiring loses to degree-matched random at nearest-neighbor retrieval, 0.4886 vs 0.5270
-          map. a bipartite configuration model preserving both margins reproduces ~80% of the
-          gap, so the cost is glomerular sampling bias: dp1m reaches 564 kenyon cells, vl1
-          reaches zero.
+          built{" "}
+          <a href="https://fly.idhant.dev">
+            <strong>fly nose</strong>
+          </a>
+          . ran the flywire connectome&apos;s olfactory circuit as a locality-sensitive
+          hash. 50 glomeruli, 2,597 kenyon cells. real wiring loses to degree-matched
+          random at nearest-neighbor retrieval, 0.4886 vs 0.5270 map. the cost is
+          glomerular sampling bias: dp1m reaches 564 kenyon cells, vl1 reaches zero.
         </li>
       </ul>
 
@@ -169,6 +171,7 @@ export default function Home() {
         </a>{" "}
         · <a href="https://www.linkedin.com/in/idhant-ranjan-078104254">linkedin</a>
       </p>
+
     </main>
   );
 }

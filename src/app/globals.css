@@ -1,11 +1,8 @@
-/*
- * Impulse Labs palette, lifted from the deployed site's computed styles:
- *   background #faf7f0, ink #2b2828, muted #857e78, Inter, 15px / 1.65
- */
+/* Plain white ground, EB Garamond — the serif build.ai sets its prose in. */
 :root {
-  --bg: #faf7f0;
-  --ink: #2b2828;
-  --muted: #857e78;
+  --bg: #ffffff;
+  --ink: #1a1a1a;
+  --muted: #9a9a9a;
 }
 
 *,
@@ -28,9 +25,9 @@ html {
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 15px;
-  line-height: 1.65;
+  font-family: var(--font-eb-garamond), Georgia, "Times New Roman", Times, serif;
+  font-size: 17px;
+  line-height: 1.45;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -74,7 +71,7 @@ li::before {
 }
 
 strong {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 a {
@@ -92,7 +89,7 @@ a {
 }
 
 a:hover {
-  background-color: #f0e6c8;
+  background-color: #f4efdc;
   text-decoration-color: var(--ink);
 }
 

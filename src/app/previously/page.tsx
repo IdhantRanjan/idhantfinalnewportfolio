@@ -11,32 +11,26 @@ export default function PreviouslyPage() {
 
       <ul>
         <li>
-          built <Link href="/research/bopcd-northwestern">dlsci</Link> over 1.5 yrs at{" "}
-          <strong>northwestern</strong>. bayesian changepoint early-warning for defi
-          liquidity stress. recall 1.000, 129h lead time.{" "}
-          <strong>iiai cdef 2026</strong>, ieee publication.
-        </li>
-        <li>
           presented{" "}
           <Link href="/research/deep-learning-abm">
             ml + agent-based modeling for degrowth policy
           </Link>{" "}
-          at <strong>esee 2026</strong>, ghent.{" "}
+          at esee 2026, ghent.{" "}
           <a href="/esee-2026-certificate.pdf">certificate</a>.
         </li>
         <li>
           adaptive feature importance for heterogeneous graphs.{" "}
-          <strong>ieee iccsic 2026</strong>,{" "}
+          ieee iccsic 2026,{" "}
           <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6375438">ssrn</a>
           .
         </li>
         <li>
           built low-cost <Link href="/research/efget-niu">egfet biosensors</Link> at{" "}
-          <strong>niu</strong>.
+          niu.
         </li>
         <li>
           built <Link href="/projects/airaware">airaware</Link> at{" "}
-          <strong>lewis university</strong>. real-time air quality forecasting,{" "}
+          lewis university. real-time air quality forecasting,{" "}
           <Link href="/research/airaware-research">sensor placement optimization</Link>
           .
         </li>
@@ -46,7 +40,7 @@ export default function PreviouslyPage() {
         </li>
         <li>
           designed <Link href="/projects/allergx">allergx</Link>, rna aptaswitch
-          therapy for ige-mediated allergy. won <strong>tks moonshot</strong>.
+          therapy for ige-mediated allergy. won tks moonshot.
         </li>
         <li>
           built <Link href="/projects/cropsia">cropsia</Link> (cnn, 87k drone images,
@@ -67,14 +61,14 @@ export default function PreviouslyPage() {
         </li>
         <li>
           <Link href="/work/commissioner-naperville">
-            <strong>naperville riverwalk commission</strong>
+            naperville riverwalk commission
           </Link>
           . 1 of 2 student commissioners, handles $3m/yr.
         </li>
         <li>
           exec officer,{" "}
           <Link href="/work/ipsd-204">
-            <strong>ipsd 204</strong> student advisory board
+            ipsd 204 student advisory board
           </Link>
           . 26,000 students. built{" "}
           <a href="https://mosaic-204.vercel.app/">mosaic</a>.
@@ -83,26 +77,11 @@ export default function PreviouslyPage() {
           teen advisory board, <Link href="/work/alive-center">alive center</Link>.
           surgical volunteer,{" "}
           <Link href="/work/edward-elmhurst">
-            <strong>edward-elmhurst</strong>
+            edward-elmhurst
           </Link>
           . vp,{" "}
           <Link href="/work/alzheimers-foundation">
-            <strong>alzheimer&apos;s foundation of america</strong>
-          </Link>
-          .
-        </li>
-        <li>
-          wrote{" "}
-          <Link href="/thoughts/cost-of-knowing">
-            the cost of knowing is approaching zero
-          </Link>
-          ,{" "}
-          <Link href="/thoughts/blank-spot">
-            we are approaching the end of the blank spot
-          </Link>
-          , and{" "}
-          <Link href="/thoughts/becoming-useful">
-            a generalist&apos;s guide to becoming useful
+            alzheimer&apos;s foundation of america
           </Link>
           .
         </li>

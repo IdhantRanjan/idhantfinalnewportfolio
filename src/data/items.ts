@@ -586,8 +586,8 @@ export const work: WorkItem[] = [
     description: "1,300+ kids. North Central College, YMCA, Junior Achievement.",
     tag: "co-president",
     type: "volunteer",
-    externalLink: "https://buildabiz.net/",
-    externalLinkLabel: "buildabiz.net",
+    externalLink: "https://www.buildabiz.org/",
+    externalLinkLabel: "buildabiz.org",
     overview:
       "co-president of Build-A-Biz, a financial literacy nonprofit that runs workshops, camps, and programs for young people across the Naperville area. we've reached 1,300+ kids through partnerships with North Central College, the YMCA, and Junior Achievement.",
     sections: [

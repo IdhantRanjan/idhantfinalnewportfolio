@@ -1,14 +1,5 @@
 import type { Metadata } from "next";
-import { EB_Garamond } from "next/font/google";
 import "./globals.css";
-
-const ebGaramond = EB_Garamond({
-  variable: "--font-eb-garamond",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Idhant Ranjan",
@@ -22,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={ebGaramond.variable}>
+    <html lang="en">
       <body>{children}</body>
     </html>
   );

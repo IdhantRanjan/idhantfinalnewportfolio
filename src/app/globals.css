@@ -1,4 +1,4 @@
-/* Plain white ground, Times New Roman — the system stack duetlabs.co uses. */
+/* Plain white ground, EB Garamond — the serif eddy.build uses. */
 :root {
   --bg: #ffffff;
   --ink: #1a1a1a;
@@ -25,7 +25,7 @@ html {
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: "Times New Roman", Times, serif;
+  font-family: var(--font-eb-garamond), Georgia, "Times New Roman", Times, serif;
   font-size: 17px;
   line-height: 1.45;
   -webkit-font-smoothing: antialiased;

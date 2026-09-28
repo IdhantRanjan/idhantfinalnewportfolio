@@ -44,7 +44,7 @@ export default function Draft() {
         <Link href="/previously">build other things</Link>.
       </p>
 
-      <p>the days are long. the decades are short. the millennia, shorter still.</p>
+      <p>the days are long. the decades are short.</p>
 
       <p>
         <a href="mailto:idhant@duetlabs.co">idhant@duetlabs.co</a> |{" "}

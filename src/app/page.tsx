@@ -4,9 +4,8 @@ export default function Draft() {
   return (
     <main>
       <p>
-        hi! i&apos;m idhant ranjan, <a href="https://zfellows.com/">z fellow</a> and
-        co-founder of <a href="https://duetlabs.co">duet labs</a>. we&apos;re solving
-        collaboration.
+        hi! i&apos;m idhant ranjan, a z fellow and co-founder @{" "}
+        <a href="https://duetlabs.co">duet labs</a>. we&apos;re solving collaboration.
       </p>
 
       <p>

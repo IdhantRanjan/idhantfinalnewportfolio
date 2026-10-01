@@ -35,7 +35,7 @@ export default function Draft() {
         <li>
           co-founded{" "}
           <a href="https://www.buildabiz.org/">a financial literacy nonprofit</a>,
-          4,000+ kids
+          8,000+ kids
         </li>
       </ul>
 

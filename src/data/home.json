@@ -1,0 +1,37 @@
+{
+  "blocks": [
+    {
+      "type": "p",
+      "html": "hi im idhant ranjan."
+    },
+    {
+      "type": "p",
+      "html": "im a z fellow &amp; ceo @ <a href=\"https://duetlabs.co\">duet labs</a> (a16z). we&rsquo;ve raised $1.36m because we think robots can learn a lot by watching people work together."
+    },
+    {
+      "type": "p",
+      "html": "before duet i:"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "won the <a href=\"https://conrad.spacecenter.org/2026-awards/\">conrad challenge</a>, <a href=\"https://blueoceancompetition.org/2025-2026-winners/\">blue ocean</a>, &amp; isef sf building <a href=\"https://www.vocl.dev/\">a voice for people with als</a>",
+        "published in <a href=\"https://ieeexplore.ieee.org/document/11685081\">ieee</a> @ northwestern",
+        "<a href=\"https://labs.feinberg.northwestern.edu/parvez/index.html\">applied ml to cancer research</a>",
+        "co-founded <a href=\"https://www.buildabiz.org/\">a financial literacy nonprofit</a> for 8,000+ kids"
+      ]
+    },
+    {
+      "type": "p",
+      "html": "i also <a href=\"/writing\">write</a> &amp; <a href=\"/previously\">build other things</a>."
+    },
+    {
+      "type": "p",
+      "html": "the days are long. the decades are short"
+    },
+    {
+      "type": "p",
+      "html": "<a href=\"mailto:idhant@duetlabs.co\">idhant@duetlabs.co</a> | <a href=\"https://github.com/IdhantRanjan\">github</a> | <a href=\"https://scholar.google.com/citations?user=Hh1nMCkAAAAJ&amp;hl=en\">scholar</a>"
+    }
+  ]
+}

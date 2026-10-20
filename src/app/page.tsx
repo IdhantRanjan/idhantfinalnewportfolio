@@ -1,58 +1,24 @@
-import Link from "next/link";
+import home from "@/data/home.json";
 
-export default function Draft() {
+type Block =
+  | { type: "p"; html: string }
+  | { type: "ul"; items: string[] };
+
+export default function Home() {
+  const blocks = home.blocks as Block[];
   return (
     <main>
-      <p>
-        hi! i&apos;m idhant ranjan, a z fellow and co-founder @{" "}
-        <a href="https://duetlabs.co">duet labs</a>. we&apos;re solving collaboration.
-      </p>
-
-      <p>
-        we think robots can learn a lot by watching people work together.
-      </p>
-
-      <p>before duet, i:</p>
-
-      <ul>
-        <li>
-          won the{" "}
-          <a href="https://conrad.spacecenter.org/2026-awards/">conrad challenge</a>,{" "}
-          <a href="https://blueoceancompetition.org/2025-2026-winners/">blue ocean</a>,
-          and isef sf building{" "}
-          <a href="https://www.vocl.dev/">a voice for people with als</a>
-        </li>
-        <li>
-          published in{" "}
-          <a href="https://ieeexplore.ieee.org/document/11685081">ieee</a> @
-          northwestern
-        </li>
-        <li>
-          <a href="https://labs.feinberg.northwestern.edu/parvez/index.html">
-            applied ml to cancer research
-          </a>
-        </li>
-        <li>
-          co-founded{" "}
-          <a href="https://www.buildabiz.org/">a financial literacy nonprofit</a>,
-          8,000+ kids
-        </li>
-      </ul>
-
-      <p>
-        i also <Link href="/writing">write</Link> and{" "}
-        <Link href="/previously">build other things</Link>.
-      </p>
-
-      <p>the days are long. the decades are short.</p>
-
-      <p>
-        <a href="mailto:idhant@duetlabs.co">idhant@duetlabs.co</a> |{" "}
-        <a href="https://github.com/IdhantRanjan">github</a> |{" "}
-        <a href="https://scholar.google.com/citations?user=Hh1nMCkAAAAJ&hl=en">
-          scholar
-        </a>
-      </p>
+      {blocks.map((b, i) =>
+        b.type === "ul" ? (
+          <ul key={i}>
+            {b.items.map((item, j) => (
+              <li key={j} dangerouslySetInnerHTML={{ __html: item }} />
+            ))}
+          </ul>
+        ) : (
+          <p key={i} dangerouslySetInnerHTML={{ __html: b.html }} />
+        )
+      )}
     </main>
   );
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import doc from "@/data/fulfillment.json";
 
 export default function WritingPage() {
   return (
@@ -11,19 +12,7 @@ export default function WritingPage() {
 
       <ul>
         <li>
-          <Link href="/thoughts/cost-of-knowing">
-            the cost of knowing is approaching zero
-          </Link>
-        </li>
-        <li>
-          <Link href="/thoughts/blank-spot">
-            we are approaching the end of the blank spot
-          </Link>
-        </li>
-        <li>
-          <Link href="/thoughts/becoming-useful">
-            a generalist&apos;s guide to becoming useful
-          </Link>
+          <Link href="/writing/fulfillment">{doc.title}</Link>
         </li>
       </ul>
     </main>

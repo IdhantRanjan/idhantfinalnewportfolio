@@ -1,5 +1,5 @@
 import Link from "next/link";
-import doc from "@/data/fulfillment.json";
+import { docs, order } from "@/data/docs";
 
 export default function WritingPage() {
   return (
@@ -11,9 +11,11 @@ export default function WritingPage() {
       <p>writing:</p>
 
       <ul>
-        <li>
-          <Link href="/writing/fulfillment">{doc.title}</Link>
-        </li>
+        {order.map((slug) => (
+          <li key={slug}>
+            <Link href={`/writing/${slug}`}>{docs[slug].title}</Link>
+          </li>
+        ))}
       </ul>
     </main>
   );

@@ -33,9 +33,10 @@ body {
 }
 
 main {
-  /* 672 + padding left the intro 13px short of one line; the extra room
-     also absorbs a wider fallback face if the webfont fails to load */
-  max-width: 720px;
+  /* Sized so the intro holds one line: it needs 664px, and this leaves
+     ~40px spare to absorb the wider Georgia fallback if the webfont
+     fails and minor cross-platform rendering differences. */
+  max-width: 752px;
   margin: 0 auto;
   padding: 48px 24px 80px;
 }

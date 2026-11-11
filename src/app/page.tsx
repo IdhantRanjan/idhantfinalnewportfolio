@@ -19,9 +19,6 @@ export default function Home() {
           <p key={i} dangerouslySetInnerHTML={{ __html: b.html }} />
         )
       )}
-
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img className="mark" src="/dots.gif" alt="" />
     </main>
   );
 }

@@ -33,7 +33,9 @@ body {
 }
 
 main {
-  max-width: 672px;
+  /* 672 + padding left the intro 13px short of one line; the extra room
+     also absorbs a wider fallback face if the webfont fails to load */
+  max-width: 720px;
   margin: 0 auto;
   padding: 48px 24px 80px;
 }

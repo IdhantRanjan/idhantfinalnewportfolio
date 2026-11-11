@@ -2,7 +2,7 @@
   "blocks": [
     {
       "type": "p",
-      "html": "hi im idhant, cofounder @ <a href=\"https://duetlabs.co\">duetlabs</a>. raised $1.36m to bring the bitter lesson to multiactor robotics."
+      "html": "hi im idhant, cofounder @ <a href=\"https://duetlabs.co\">duetlabs</a>. raised $1.36m to bring <a href=\"https://www.cs.utexas.edu/~eunsol/courses/data/bitter_lesson.pdf\">the bitter lesson</a> to multiactor robotics."
     },
     {
       "type": "p",

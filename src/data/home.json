@@ -2,11 +2,7 @@
   "blocks": [
     {
       "type": "p",
-      "html": "hi im idhant ranjan."
-    },
-    {
-      "type": "p",
-      "html": "im a z fellow &amp; ceo @ <a href=\"https://duetlabs.co\">duet labs</a> (a16z speedrun). we&rsquo;ve raised $1.36m to push the frontier of multi-actor robotics."
+      "html": "hi im idhant, co-founder &amp; ceo @ <a href=\"https://duetlabs.co\">duetlabs</a> (a16z sr). we&rsquo;ve raised $1.36m to teach the bitter lesson of multiactor robotics."
     },
     {
       "type": "p",
@@ -17,6 +13,7 @@
       "items": [
         "won the <a href=\"https://conrad.spacecenter.org/2026-awards/\">conrad challenge</a>, <a href=\"https://blueoceancompetition.org/2025-2026-winners/\">blue ocean</a>, &amp; isef sf building <a href=\"https://www.vocl.dev/\">a voice for people with als</a>",
         "published in <a href=\"https://ieeexplore.ieee.org/document/11685081\">ieee</a> @ northwestern",
+        "published in <a href=\"https://neurips.cc/virtual/2026/loc/atlanta/171462\">neurips</a> (#1 ml conf in the world)",
         "<a href=\"https://labs.feinberg.northwestern.edu/parvez/index.html\">applied ml to cancer research</a>",
         "co-founded <a href=\"https://www.buildabiz.org/\">a financial literacy nonprofit</a> for 8,000+ kids"
       ]

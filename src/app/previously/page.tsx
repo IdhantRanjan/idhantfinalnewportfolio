@@ -89,8 +89,8 @@ export default function PreviouslyPage() {
 
       <p className="more">
         on the side, building{" "}
-        <a href="/element-a-assistive-glasses.pdf">assistive glasses</a> that warn
-        blind and low-vision pedestrians about head- and chest-level obstacles a cane
+        <a href="/element-a-assistive-glasses.pdf">assistive glasses</a>{" "}
+        that warn blind and low-vision pedestrians about head- and chest-level obstacles a cane
         passes under. 76% of the 38 people we surveyed said their current aid
         doesn&apos;t catch them.
       </p>

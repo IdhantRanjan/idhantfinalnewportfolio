@@ -12,6 +12,7 @@ type DuetRobots = {
       rows?: number;
       colors?: string[];
       lineHeight?: number;
+      alphaGamma?: number;
       onFail?: () => void;
       onTick?: (t: number, loop: number, scene: number, name: string) => void;
     }
@@ -31,8 +32,8 @@ const SRC = "/duet-robots.js";
 export default function HandoverMark() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const instRef = useRef<Instance | null>(null);
-  const sceneRef = useRef("handover");
-  const [scene, setScene] = useState("handover");
+  const capRef = useRef("fig. 1 — handover");
+  const [cap, setCap] = useState("fig. 1 — handover");
   const [failed, setFailed] = useState(false);
 
   useEffect(() => {
@@ -43,14 +44,19 @@ export default function HandoverMark() {
       instRef.current = window.DuetRobots.start(canvasRef.current, {
         cols: 104,
         rows: 34,
-        colors: ["#4a3c2c", "#9c5a4e", "#5b6b8f"],
+        colors: ["#ecdcd4", "#d98c70", "#9fb0c4"],
+        // the alpha ramp assumes dark glyphs on cream; on a dark ground the
+        // low buckets vanish, so lift them
+        alphaGamma: 0.42,
         lineHeight: 1.02,
         onFail: () => setFailed(true),
-        // fires every frame, so only touch state when the scene actually turns over
-        onTick: (_t, _loop, _si, name) => {
-          if (name !== sceneRef.current) {
-            sceneRef.current = name;
-            setScene(name);
+        // fires every frame, so only touch state when the caption changes.
+        // si is the scene index, so the figure number tracks the scene.
+        onTick: (_t, _loop, si, name) => {
+          const next = `fig. ${si + 1} \u2014 ${name}`;
+          if (next !== capRef.current) {
+            capRef.current = next;
+            setCap(next);
           }
         },
       });
@@ -89,7 +95,7 @@ export default function HandoverMark() {
       >
         <canvas ref={canvasRef} />
       </button>
-      <figcaption>fig. 1 &mdash; {scene}</figcaption>
+      <figcaption>{cap}</figcaption>
     </figure>
   );
 }

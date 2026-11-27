@@ -1,8 +1,12 @@
-/* Plain white ground, EB Garamond — the serif eddy.build uses. */
+/* Ink rose: warm black ground, EB Garamond, terracotta for anything live. */
 :root {
-  --bg: #ffffff;
-  --ink: #1a1a1a;
-  --muted: #9a9a9a;
+  --bg: #10100f;
+  --ink: #e8e4dc;
+  --muted: #7d766a;
+  --acc: #d98c70;
+  --accdim: #7d4e3c;
+  --hl: #281913;
+  --rule: #241f18;
 }
 
 *,
@@ -27,7 +31,7 @@ body {
   color: var(--ink);
   font-family: var(--font-eb-garamond), Georgia, "Times New Roman", Times, serif;
   font-size: 17px;
-  line-height: 1.45;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -70,7 +74,7 @@ li::before {
   content: "\2022";
   position: absolute;
   left: 0;
-  color: var(--muted);
+  color: var(--accdim);
 }
 
 strong {
@@ -78,11 +82,11 @@ strong {
 }
 
 a {
-  color: var(--ink);
+  color: var(--acc);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
-  text-decoration-color: var(--muted);
+  text-decoration-color: var(--accdim);
   border-radius: 2px;
   padding: 0 1px;
   margin: 0 -1px;
@@ -92,8 +96,8 @@ a {
 }
 
 a:hover {
-  background-color: #f4efdc;
-  text-decoration-color: var(--ink);
+  background-color: var(--hl);
+  text-decoration-color: var(--acc);
 }
 
 /* Detail pages */
@@ -157,10 +161,12 @@ a:hover {
 
 /* Animated mark — two arms, drawn as characters. Sits above the intro. */
 .fig {
-  /* Andrew runs his mark at the full width of the text column (624px of a
-     672px column). Same treatment here: the column is 704px of content, so
-     the canvas lands a little larger than his. */
-  width: 100%;
+  /* The renderer holds a fixed character grid, so the canvas is always
+     0.554x as tall as it is wide. The rest of the page costs a fixed
+     amount, which leaves this much width before it starts to scroll.
+     Capped at 704px — the full width of the text column, Andrew's
+     treatment. Retuned whenever copy is added or removed. */
+  width: clamp(240px, calc(180.5vh - 1123px), 704px);
   margin: 0 auto 26px;
   line-height: 0;
 }
@@ -183,7 +189,7 @@ figcaption {
   font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   font-size: 11px;
   line-height: 1.4;
-  color: var(--muted);
+  color: var(--accdim);
   margin-top: 9px;
   text-align: center;
   text-transform: lowercase;

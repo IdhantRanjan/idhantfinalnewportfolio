@@ -2,11 +2,7 @@
   "blocks": [
     {
       "type": "p",
-      "html": "hi im idhant, cofounder &amp; ceo @ <a href=\"https://duetlabs.co\">duetlabs</a> (a16z sr008). we've raised $1.5m to bring <a href=\"https://www.cs.utexas.edu/~eunsol/courses/data/bitter_lesson.pdf\">the bitter lesson</a> to multiactor robotics."
-    },
-    {
-      "type": "p",
-      "html": "humanity's greatest achievement will come from teaching robots to collaborate with us, and each other."
+      "html": "hi im idhant, cofounder &amp; ceo @ <a href=\"https://duetlabs.co\">duet labs</a> (a16z sr008). we've raised $1.5m to bring <a href=\"https://www.cs.utexas.edu/~eunsol/courses/data/bitter_lesson.pdf\">the bitter lesson</a> to multiactor robotics. ++ im a z fellow &amp; a pareto fellow."
     },
     {
       "type": "p",
@@ -15,12 +11,15 @@
     {
       "type": "ul",
       "items": [
-        "won the <a href=\"https://conrad.spacecenter.org/2026-awards/\">conrad challenge</a>, <a href=\"https://blueoceancompetition.org/2025-2026-winners/\">blue ocean</a>, &amp; isef sf building <a href=\"https://www.vocl.dev/\">a voice for people with als</a>",
-        "published in <a href=\"https://ieeexplore.ieee.org/document/11685081\">ieee</a> @ northwestern",
-        "published in <a href=\"https://neurips.cc/virtual/2026/loc/atlanta/171462\">neurips</a> (#1 ml conf in the world)",
+        "won the <a href=\"https://conrad.spacecenter.org/2026-awards/\">conrad challenge</a>, <a href=\"https://blueoceancompetition.org/2025-2026-winners/\">blue ocean</a>, isef sf solving <a href=\"https://www.vocl.dev/\">ALS</a>",
+        "published my research in <a href=\"https://ieeexplore.ieee.org/document/11685081\">IEEE</a> &amp; <a href=\"https://neurips.cc/virtual/2026/loc/atlanta/171462\">neurips</a> @ northwestern",
         "<a href=\"https://labs.feinberg.northwestern.edu/parvez/index.html\">applied ml to cancer research</a>",
-        "co-founded <a href=\"https://www.buildabiz.org/\">a financial literacy nonprofit</a> for 8,000+ kids"
+        "co-founded <a href=\"https://www.buildabiz.org/\">a financial literacy nonprofit</a> for 8000+ kids"
       ]
+    },
+    {
+      "type": "p",
+      "html": "humanity's greatest achievement will come from teaching robots to collaborate with us, and each other."
     },
     {
       "type": "p",
@@ -32,7 +31,7 @@
     },
     {
       "type": "p",
-      "html": "<a href=\"mailto:idhant@duetlabs.co\">idhant@duetlabs.co</a> | <a href=\"https://github.com/IdhantRanjan\">github</a> | <a href=\"https://scholar.google.com/citations?user=Hh1nMCkAAAAJ&amp;hl=en\">scholar</a>"
+      "html": "<a href=\"mailto:idhant@duetlabs.co\">idhant@duetlabs.co</a> | <a href=\"https://github.com/IdhantRanjan\">github</a> | <a href=\"https://www.linkedin.com/in/idhant-ranjan-078104254\">linkedin</a> | <a href=\"https://scholar.google.com/citations?user=Hh1nMCkAAAAJ&amp;hl=en\">scholar</a>"
     }
   ]
 }

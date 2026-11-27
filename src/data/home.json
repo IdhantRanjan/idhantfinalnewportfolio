@@ -26,8 +26,12 @@
       "html": "in pursuit of solving collaboration, im a z fellow &amp; a pareto fellow. i also <a href=\"/writing\">write</a> &amp; <a href=\"/previously\">build other things</a>."
     },
     {
+      "type": "gap"
+    },
+    {
       "type": "p",
-      "html": "<em>Made weak by time and fate, but strong in will<br />To strive, to seek, to find, and not to yield.</em>"
+      "html": "<em>Made weak by time and fate, but strong in will<br />To strive, to seek, to find, and not to yield.</em>",
+      "cls": "tail"
     },
     {
       "type": "p",

@@ -45,19 +45,7 @@ main {
   padding: 40px 24px 40px;
 }
 
-/* Home page sits in one screen: the spacer soaks up whatever is left over,
-   so the quote and the contact line always rest at the foot of the window. */
-main.home {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.gap {
-  flex: 1 1 56px;
-  min-height: 56px;
-}
-
+/* A hairline sets the quote and the contact line apart from the rest. */
 .tail {
   border-top: 1px solid var(--rule);
   padding-top: 1.45em;
@@ -184,7 +172,7 @@ a:hover {
      amount, which leaves this much width before it starts to scroll.
      Capped at 704px — the full width of the text column, Andrew's
      treatment. Retuned whenever copy is added or removed. */
-  width: clamp(240px, calc(180.5vh - 1132px), 704px);
+  width: clamp(240px, calc(180.5vh - 1029px), 704px);
   margin: 0 auto 26px;
   line-height: 0;
 }

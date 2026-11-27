@@ -157,12 +157,10 @@ a:hover {
 
 /* Animated mark — two arms, drawn as characters. Sits above the intro. */
 .fig {
-  /* The renderer keeps a fixed character grid, so the canvas is always
-     0.554x as tall as it is wide. Everything else on the page costs a
-     fixed ~560px, which leaves (100vh - 560px) / 0.554 of width before
-     the page starts to scroll — that is the calc below. Capped at 480px
-     so it stops growing on tall displays. */
-  width: clamp(240px, calc(180.5vh - 1011px), 480px);
+  /* Andrew runs his mark at the full width of the text column (624px of a
+     672px column). Same treatment here: the column is 704px of content, so
+     the canvas lands a little larger than his. */
+  width: 100%;
   margin: 0 auto 26px;
   line-height: 0;
 }
@@ -194,7 +192,7 @@ figcaption {
 
 @media (max-width: 640px) {
   .fig {
-    width: min(100%, 240px);
+    width: 100%;
     margin-bottom: 22px;
   }
 }

@@ -1,3 +1,4 @@
+import HandoverMark from "@/components/HandoverMark";
 import home from "@/data/home.json";
 
 type Block =
@@ -8,6 +9,7 @@ export default function Home() {
   const blocks = home.blocks as Block[];
   return (
     <main>
+      <HandoverMark />
       {blocks.map((b, i) =>
         b.type === "ul" ? (
           <ul key={i}>

@@ -154,3 +154,42 @@ a:hover {
   }
 }
 
+
+/* Animated mark — two arms, drawn as characters. Sits above the intro. */
+.fig {
+  width: 340px;
+  margin: 0 auto 30px;
+  line-height: 0;
+}
+
+.fig-btn {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.fig canvas {
+  display: block;
+  width: 100%;
+}
+
+figcaption {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--muted);
+  margin-top: 9px;
+  text-align: center;
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .fig {
+    width: min(100%, 240px);
+    margin-bottom: 22px;
+  }
+}

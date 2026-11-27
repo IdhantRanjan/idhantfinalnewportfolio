@@ -38,7 +38,7 @@ main {
      fails and minor cross-platform rendering differences. */
   max-width: 752px;
   margin: 0 auto;
-  padding: 48px 24px 80px;
+  padding: 40px 24px 40px;
 }
 
 p {
@@ -157,8 +157,13 @@ a:hover {
 
 /* Animated mark — two arms, drawn as characters. Sits above the intro. */
 .fig {
-  width: 340px;
-  margin: 0 auto 30px;
+  /* The renderer keeps a fixed character grid, so the canvas is always
+     0.554x as tall as it is wide. Everything else on the page costs a
+     fixed ~560px, which leaves (100vh - 560px) / 0.554 of width before
+     the page starts to scroll — that is the calc below. Capped at 480px
+     so it stops growing on tall displays. */
+  width: clamp(240px, calc(180.5vh - 1011px), 480px);
+  margin: 0 auto 26px;
   line-height: 0;
 }
 

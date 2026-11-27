@@ -6,10 +6,6 @@
     },
     {
       "type": "p",
-      "html": "in pursuit of solving collaboration, im a z fellow &amp; a pareto fellow. i also <a href=\"/writing\">write</a> &amp; <a href=\"/previously\">build other things</a>."
-    },
-    {
-      "type": "p",
       "html": "before duet i:"
     },
     {
@@ -24,6 +20,10 @@
     {
       "type": "p",
       "html": "humanity's greatest achievement will come from teaching robots to collaborate with us, and each other."
+    },
+    {
+      "type": "p",
+      "html": "in pursuit of solving collaboration, im a z fellow &amp; a pareto fellow. i also <a href=\"/writing\">write</a> &amp; <a href=\"/previously\">build other things</a>."
     },
     {
       "type": "p",
